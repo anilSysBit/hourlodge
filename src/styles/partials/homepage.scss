@@ -89,6 +89,23 @@ $image-fade:rgb(7, 146, 173);
                 }
             }
         }
+        .navigation_container{
+            width: 50%;
+            // border: 5px solid black;
+            position: absolute;
+            z-index: 1;
+            right: 50px;
+            ul{
+                display: flex;
+                padding: 4px;
+                float: right;
+                li{
+                    color: white;
+                    margin-left: 20px;
+                    font-size: 20px;
+                }
+            }
+        }
     }
 }
 

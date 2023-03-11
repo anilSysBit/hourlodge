@@ -12,6 +12,7 @@ $global:rgb(7, 146, 173);
     // font-family: 'Fredoka One', cursive;
     // font-family: 'Righteous', cursive;
     font-family: 'Cabin', sans-serif;
+    list-style: none;
 
 }
 
@@ -28,4 +29,21 @@ button{
     &:hover{
         background-color: rgb(6, 100, 118);
     }
+}
+
+.line_button{
+    background-color: transparent;
+    height: default;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 15px;
+    padding: 10px;
+    transition: .5s ease;
+    &:hover{
+        background-color: $global;
+    }
+}
+
+.cut_line{
+    border-color: transparent;
 }

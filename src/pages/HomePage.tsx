@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import "../styles/partials/homepage.css"
+import Navigation from '../components/Navigation'
+
 
 const cities = [
     {name:"Chitwan"},
@@ -16,13 +18,10 @@ const HomePage = () => {
     let currentDate = newDate.toISOString().split('T')[0];
     let currentTime = newDate.toTimeString().slice(0,5);
 
-    console.log(currentDate)
-    console.log(currentTime)
-
-    console.log(currentDate)
   return (
     <div className="home_main_container">
         <div className="photo_holder_container">
+            <Navigation/>
             <img src="https://th.bing.com/th/id/R.d2cdd4a6a6ed8cb699943fb2dc136e62?rik=rnPHug8q5KM%2beA&pid=ImgRaw&r=0" alt="hotelroom" />
             <div className="overlap_image_container">
                 <h1>OurStay Lodges Nepal</h1>
