@@ -5,7 +5,7 @@ const OurFeatures = () => {
     <div className="our_features_container">
         <div className="features_internal_container">
             <div className="features_data_container">
-                <h1>Our Features</h1>
+                <h1>Your Choices</h1>
                 <h3>Stay by the hour, pay only for the time you need</h3>
             </div>
             <div className="list_of_features">

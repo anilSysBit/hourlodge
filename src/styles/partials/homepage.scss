@@ -237,3 +237,38 @@ $feature_color:#cad8db;
         }
     }
 }
+
+$mobile_cover:rgb(220, 247, 249);
+.mobile_app_container{
+    height: 300px;
+    width: 100%;
+    position: relative;
+    // background-color: rgb(220, 247, 249);
+    background-image: linear-gradient(90deg,transparent,$mobile_cover,transparent);
+    display: flex;
+    place-content: center;
+    place-items: center;
+    margin-top: 50px;
+    h1{
+        text-align: center;
+    }
+    .mobile{
+        max-width: 600px;
+        position: absolute;
+        left: 20px;
+    }
+
+    .play_store{
+            max-width: 300px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px white;
+            position: absolute;
+            right: 70px;
+        }
+    
+
+}
+
+.qualities_container{
+    margin-top: 100px;
+}

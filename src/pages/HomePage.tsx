@@ -3,6 +3,7 @@ import "../styles/partials/homepage.css"
 import Navigation from '../components/Navigation'
 import SearchByPlace from '../components/SearchByPlace'
 import OurFeatures from '../components/OurFeatures'
+import Qualities from '../components/Qualities'
 
 
 const cities = [
@@ -61,6 +62,17 @@ const HomePage = () => {
     </div>
     <SearchByPlace />
     <OurFeatures />
+    <div className="mobile_app_container">
+        <img className='mobile' src="https://www.freepngimg.com/thumb/iphone_7/68698-vector-painted-smartphone-iphone-apple-png-free-photo.png" alt="mobile" />
+        <span>
+        <h1>Mobile App in Production</h1>
+        <br/>
+        <h3>Coming Soon.......</h3>
+        </span>
+        <img className='play_store' src="https://th.bing.com/th/id/R.b529c865909767cbf889c83d4b06e01f?rik=SINPOJS%2fBcg6AQ&pid=ImgRaw&r=0" alt="playapplestore" />
+
+    </div>
+    <Qualities />
     </>
   )
 }
