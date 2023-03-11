@@ -2,7 +2,7 @@
 
 $image-fade: rgb(7, 146, 173);
 $feature_color: #cad8db;
-
+$footer_color:rgb(3, 38, 45);
 .home_main_container {
     height: 100vh;
     width: 100%;
@@ -354,18 +354,25 @@ $mobile_cover: rgb(220, 247, 249);
                         z-index:2;
                         font-size: 30px;
                         left: 10%;
+                        text-align: center;
                     }
                     h3{
                         position: absolute;
                         z-index: 2;
                         bottom: 10%;
                         font-size: 20px;
-                        left: 10%;
+                        font-weight: 100;
+                        text-align: center;
                     }
                 }
             }
         }
     }
+}
+.footer_container{
+    height: 500px;
+    width: 100%;
+    background-color: $image-fade;
 }
 .ads_container{
     height: 200px;

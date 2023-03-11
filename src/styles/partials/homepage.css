@@ -295,13 +295,21 @@
   z-index: 2;
   font-size: 30px;
   left: 10%;
+  text-align: center;
 }
 .qualities_container .qualities_internal_container .slider_container .slick-slide .slider_child h3 {
   position: absolute;
   z-index: 2;
   bottom: 10%;
   font-size: 20px;
-  left: 10%;
+  font-weight: 100;
+  text-align: center;
+}
+
+.footer_container {
+  height: 500px;
+  width: 100%;
+  background-color: rgb(7, 146, 173);
 }
 
 .ads_container {

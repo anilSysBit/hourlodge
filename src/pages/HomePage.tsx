@@ -4,6 +4,7 @@ import Navigation from '../components/Navigation'
 import SearchByPlace from '../components/SearchByPlace'
 import OurFeatures from '../components/OurFeatures'
 import Qualities from '../components/Qualities'
+import Footer from '../components/Footer'
 
 
 const cities = [
@@ -75,6 +76,8 @@ const HomePage = () => {
             </div>
             <div className="ads_container"></div>
             <Qualities />
+            <div className="ads_container"></div>
+            <Footer/>
         </>
     )
 }

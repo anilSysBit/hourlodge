@@ -57,7 +57,7 @@ const Qualities = () => {
                                                 background-position:center;
                                                 background-size:cover;
                                                 background-origin:center;
-                                                filter:grayscale(.5);
+                                                // filter:grayscale(.5);
                                             }
                                         `}</style>
                                         <h1>{elem.title}</h1>
