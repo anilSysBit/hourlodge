@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
 
 $image-fade:rgb(7, 146, 173);
+$feature_color:#cad8db;
 .home_main_container{
     height: 100vh;
     width: 100%;
@@ -99,6 +100,7 @@ $image-fade:rgb(7, 146, 173);
             right: 50px;
             margin-top: 5px;
             ul{
+                list-style: none;
                 display: flex;
                 padding: 4px;
                 float: right;
@@ -175,3 +177,63 @@ $image-fade:rgb(7, 146, 173);
     }
 }
 
+.our_features_container{
+
+    h1{}
+    .features_internal_container{
+        height: 400px;
+        width: 100%;
+        display: flex;
+        position: relative;
+        .features_data_container{
+            height: 100%;
+            // border: 5px solid black;
+            position: absolute;
+            width: 50%;
+            background-image: linear-gradient(90deg,$feature_color,$feature_color,transparent);
+            display: flex;
+            place-content: center;
+            place-items: center;
+            flex-direction: column;
+            h1{
+                font-size: 50px;
+            }
+            h3{
+                font-size: 25px;
+            }
+
+        }
+        .list_of_features{
+            position: absolute;
+            // border: 2px solid black;
+            height: 100%;
+            right: 50%;
+            transform: translate(100%);
+            z-index: 5;
+            display: flex;
+            place-content: center;
+            place-items: center;
+            ul{
+                list-style-image: url('../../assets/icons8-tick-box.svg');
+                li{
+                    font-size: 20px;
+                    padding:5px;
+                    margin:5px;
+                    font-weight: bold;
+                }
+            }
+        }
+        .features_image_container{
+            right: 0;
+            // border: 2px solid green;
+            height: 100%;
+            position: absolute;
+            width: 50%;
+            img{
+               height: 100%;
+               width: 100%;
+               transform: scaleX(-1);
+            }
+        }
+    }
+}

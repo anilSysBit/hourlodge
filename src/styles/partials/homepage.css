@@ -92,6 +92,7 @@
   margin-top: 5px;
 }
 .home_main_container .photo_holder_container .navigation_container ul {
+  list-style: none;
   display: flex;
   padding: 4px;
   float: right;
@@ -156,4 +157,57 @@
   border: 3px solid white;
   scale: 1.2;
   filter: grayscale(0);
+}
+
+.our_features_container .features_internal_container {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+.our_features_container .features_internal_container .features_data_container {
+  height: 100%;
+  position: absolute;
+  width: 50%;
+  background-image: linear-gradient(90deg, #cad8db, #cad8db, transparent);
+  display: flex;
+  place-content: center;
+  place-items: center;
+  flex-direction: column;
+}
+.our_features_container .features_internal_container .features_data_container h1 {
+  font-size: 50px;
+}
+.our_features_container .features_internal_container .features_data_container h3 {
+  font-size: 25px;
+}
+.our_features_container .features_internal_container .list_of_features {
+  position: absolute;
+  height: 100%;
+  right: 50%;
+  transform: translate(100%);
+  z-index: 5;
+  display: flex;
+  place-content: center;
+  place-items: center;
+}
+.our_features_container .features_internal_container .list_of_features ul {
+  list-style-image: url("../../assets/icons8-tick-box.svg");
+}
+.our_features_container .features_internal_container .list_of_features ul li {
+  font-size: 20px;
+  padding: 5px;
+  margin: 5px;
+  font-weight: bold;
+}
+.our_features_container .features_internal_container .features_image_container {
+  right: 0;
+  height: 100%;
+  position: absolute;
+  width: 50%;
+}
+.our_features_container .features_internal_container .features_image_container img {
+  height: 100%;
+  width: 100%;
+  transform: scaleX(-1);
 }/*# sourceMappingURL=homepage.css.map */
