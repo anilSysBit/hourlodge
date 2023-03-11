@@ -220,7 +220,7 @@
   display: flex;
   place-content: center;
   place-items: center;
-  margin-top: 50px;
+  margin-top: 100px;
 }
 .mobile_app_container h1 {
   text-align: center;
@@ -239,5 +239,73 @@
 }
 
 .qualities_container {
-  margin-top: 100px;
+  height: 600px;
+}
+.qualities_container h1 {
+  font-size: 50px;
+  text-align: center;
+}
+.qualities_container .qualities_internal_container {
+  display: flex;
+  place-content: center;
+  place-items: center;
+  background-image: linear-gradient(90deg, #cad8db, transparent, transparent, #cad8db);
+  height: 100%;
+}
+.qualities_container .qualities_internal_container .slider_container {
+  width: 80%;
+}
+.qualities_container .qualities_internal_container .slider_container .slick-prev, .qualities_container .qualities_internal_container .slider_container .slick-next {
+  color: white;
+  font-size: 50px;
+}
+.qualities_container .qualities_internal_container .slider_container .slick-dots li button::before {
+  color: rgb(7, 146, 173);
+  font-size: 20px;
+  margin: 10px;
+}
+.qualities_container .qualities_internal_container .slider_container .slick-dots li {
+  margin-right: 20px;
+}
+.qualities_container .qualities_internal_container .slider_container .slick-slide {
+  padding: 10px;
+}
+.qualities_container .qualities_internal_container .slider_container .slick-slide .slider_child {
+  height: 400px;
+  border-radius: 15px;
+  color: white;
+  display: flex;
+  place-content: center;
+  transition: 0.5s;
+  position: relative;
+  overflow: hidden;
+}
+.qualities_container .qualities_internal_container .slider_container .slick-slide .slider_child:hover {
+  filter: grayscale(0);
+}
+.qualities_container .qualities_internal_container .slider_container .slick-slide .slider_child span {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(transparent, transparent, rgba(18, 18, 18, 0.5), rgb(46, 45, 45));
+}
+.qualities_container .qualities_internal_container .slider_container .slick-slide .slider_child h1 {
+  position: absolute;
+  bottom: 35%;
+  z-index: 2;
+  font-size: 30px;
+  left: 10%;
+}
+.qualities_container .qualities_internal_container .slider_container .slick-slide .slider_child h3 {
+  position: absolute;
+  z-index: 2;
+  bottom: 10%;
+  font-size: 20px;
+  left: 10%;
+}
+
+.ads_container {
+  height: 200px;
+  width: 100%;
+  z-index: -10;
 }/*# sourceMappingURL=homepage.css.map */
