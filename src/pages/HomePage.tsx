@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import "../styles/partials/homepage.css"
 import Navigation from '../components/Navigation'
+import SearchByPlace from '../components/SearchByPlace'
+import OurFeatures from '../components/OurFeatures'
 
 
 const cities = [
@@ -19,6 +21,7 @@ const HomePage = () => {
     let currentTime = newDate.toTimeString().slice(0,5);
 
   return (
+    <>
     <div className="home_main_container">
         <div className="photo_holder_container">
             <Navigation/>
@@ -27,6 +30,7 @@ const HomePage = () => {
                 <h1>OurStay Lodges Nepal</h1>
                 <h3>QuickStay with Nepal's best hourly hotel Service</h3>
                 <p>Choose hotels from all major places of Nepal</p>
+                <button className='hover_color'>About US</button>
             </div>
             <form action='#' className="filter_box_container">
                <div className="filter_select">
@@ -55,6 +59,9 @@ const HomePage = () => {
             </form>
         </div>
     </div>
+    <SearchByPlace />
+    <OurFeatures />
+    </>
   )
 }
 

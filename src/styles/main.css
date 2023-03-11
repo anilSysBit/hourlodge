@@ -19,9 +19,10 @@ button {
   font-weight: bold;
   color: white;
   transition: 0.3s ease-in-out;
+  cursor: pointer;
 }
 button:hover {
-  background-color: rgb(6, 100, 118);
+  background-color: rgb(3, 56, 82);
 }
 
 .line_button {
@@ -32,6 +33,7 @@ button:hover {
   border-radius: 15px;
   padding: 10px;
   transition: 0.5s ease;
+  cursor: pointer;
 }
 .line_button:hover {
   background-color: rgb(7, 146, 173);
@@ -39,4 +41,15 @@ button:hover {
 
 .cut_line {
   border-color: transparent;
+}
+.cut_line:hover {
+  text-decoration: underline;
+  background-color: transparent;
+}
+
+.hover_color {
+  background-color: rgb(3, 56, 82);
+}
+.hover_color:hover {
+  background-color: rgb(7, 100, 146);
 }/*# sourceMappingURL=main.css.map */

@@ -1,15 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
+.home_main_container {
+  height: 100vh;
+  width: 100%;
+}
 .home_main_container .photo_holder_container {
   position: relative;
   display: flex;
 }
 .home_main_container .photo_holder_container img {
   width: 100%;
-  height: 600px;
+  height: 700px;
   transform: scaleX(-1);
 }
 .home_main_container .photo_holder_container .overlap_image_container {
-  height: 600px;
+  height: 100%;
   width: 50%;
   position: absolute;
   background-image: linear-gradient(90deg, rgb(7, 146, 173), rgb(7, 146, 173), transparent);
@@ -85,6 +89,7 @@
   position: absolute;
   z-index: 1;
   right: 50px;
+  margin-top: 5px;
 }
 .home_main_container .photo_holder_container .navigation_container ul {
   display: flex;
@@ -95,4 +100,60 @@
   color: white;
   margin-left: 20px;
   font-size: 20px;
+}
+
+.search_by_place_container {
+  height: 200px;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.search_by_place_container h1 {
+  font-size: 35px;
+}
+.search_by_place_container .place_folder_container {
+  height: 70%;
+  width: 100%;
+  display: flex;
+  place-content: center;
+  -moz-column-gap: 15px;
+       column-gap: 15px;
+  transition: 0.5s ease;
+}
+.search_by_place_container .place_folder_container .photo_holder {
+  height: 200px;
+  width: 300px;
+  position: relative;
+  padding: 10px;
+  transition: 0.5s ease;
+}
+.search_by_place_container .place_folder_container .photo_holder h3 {
+  font-size: 20px;
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+  transition: 0.7s ease;
+}
+.search_by_place_container .place_folder_container .photo_holder:hover h3 {
+  padding: 10px;
+  background-color: black;
+  color: white;
+  border-radius: 15px;
+  transform: translateY(-100px);
+}
+.search_by_place_container .place_folder_container .photo_holder img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  transition: 0.5s ease;
+  filter: grayscale(0.6);
+}
+.search_by_place_container .place_folder_container .photo_holder img:hover {
+  border: 3px solid white;
+  scale: 1.2;
+  filter: grayscale(0);
 }/*# sourceMappingURL=homepage.css.map */
