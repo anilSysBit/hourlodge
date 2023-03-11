@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
+.home_main_container .photo_holder_container {
+  position: relative;
+  display: flex;
+}
+.home_main_container .photo_holder_container img {
+  width: 100%;
+  height: 600px;
+  transform: scaleX(-1);
+}
+.home_main_container .photo_holder_container .overlap_image_container {
+  height: 600px;
+  width: 50%;
+  position: absolute;
+  background-image: linear-gradient(90deg, rgb(7, 146, 173), rgb(7, 146, 173), transparent);
+  display: flex;
+  place-content: center;
+  padding: 20px;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.home_main_container .photo_holder_container .overlap_image_container h1 {
+  color: white;
+  font-size: 70px;
+}
+.home_main_container .photo_holder_container .overlap_image_container h3 {
+  color: white;
+  font-size: 30px;
+}
+.home_main_container .photo_holder_container .overlap_image_container p {
+  color: white;
+  font-size: 20px;
+}
+.home_main_container .photo_holder_container .filter_box_container {
+  height: 120px;
+  width: 60%;
+  background-color: white;
+  box-shadow: 2px 2px 20px rgb(7, 146, 173);
+  border-radius: 20px;
+  position: absolute;
+  bottom: -50px;
+  right: 50%;
+  transform: translateX(50%);
+  display: flex;
+  place-content: center;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  padding: 10px;
+}
+.home_main_container .photo_holder_container .filter_box_container .filter_select {
+  height: 90%;
+  width: 33.33%;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  flex-direction: column;
+  font-weight: bold;
+}
+.home_main_container .photo_holder_container .filter_box_container .filter_select h3 {
+  font-size: 25px;
+}
+.home_main_container .photo_holder_container .filter_box_container .filter_select #nepalcity {
+  font-family: "Cabin", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  width: 100%;
+  height: 50px;
+  border: 3px solid rgb(7, 146, 173);
+  border-radius: 15px;
+  text-align: center;
+}
+.home_main_container .photo_holder_container .filter_box_container .filter_select #nepalcity:focus {
+  outline: none;
+}
+.home_main_container .photo_holder_container .filter_box_container .filter_select .datetime {
+  height: 50px;
+  border-radius: 15px;
+  font-size: 20px;
+  width: 100%;
+  font-weight: bold;
+  border: 3px solid rgb(7, 146, 173);
+}/*# sourceMappingURL=homepage.css.map */

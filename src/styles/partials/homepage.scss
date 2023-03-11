@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+
+$image-fade:rgb(7, 146, 173);
+.home_main_container{
+    .photo_holder_container{
+        position: relative;
+        display: flex;
+        img{
+            width: 100%;
+            height: 600px;
+            transform: scaleX(-1);
+        }
+        .overlap_image_container{
+            height: 600px;
+            width: 50%;
+            // border: 5px solid black;
+            position: absolute;
+            background-image: linear-gradient(90deg,$image-fade,$image-fade,transparent);
+            display: flex;
+            place-content: center;
+            padding: 20px;
+            flex-direction: column;
+            row-gap: 20px;
+            h1{
+                color: white;
+                font-size: 70px;
+            }
+            h3{
+                color: white;
+                font-size: 30px;
+            }
+            p{
+                color: white;
+                font-size: 20px;
+            }
+        }
+
+        .filter_box_container{
+            height: 120px;
+            width: 60%;
+            background-color: white;
+            // border: 5px solid black;
+            box-shadow: 2px 2px 20px $image-fade;
+            border-radius: 20px;
+            position: absolute;
+            bottom: -50px;
+            right: 50%;
+            transform: translateX(50%);
+            display: flex;
+            place-content: center;
+            column-gap:20px;
+            padding: 10px;
+            .filter_select{
+                // border: 2px solid black;
+                height: 90%;
+                width: 33.33%;
+                display: flex;
+                place-content: center;
+                place-items: center;
+                flex-direction: column;
+                font-weight: bold;
+                
+                h3{
+                    font-size: 25px;
+                }
+                #nepalcity{
+                    font-family: 'Cabin', sans-serif;
+                    font-size: 20px;
+                    font-weight: bold;
+                    width: 100%;
+                    height: 50px;
+                    border: 3px solid $image-fade;
+                    border-radius: 15px;
+                    text-align: center;
+                    // appearance: none;
+
+                    &:focus{
+                        outline: none;
+                    }
+                }
+                .datetime{
+                    height: 50px;
+                    // border: 3px solid $image-fade;
+                    border-radius: 15px;
+                    font-size: 20px;
+                    width: 100%;
+                    font-weight: bold;
+                    border: 3px solid $image-fade;
+                }
+            }
+        }
+    }
+}
+

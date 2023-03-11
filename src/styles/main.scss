@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+
+
+$global:rgb(7, 146, 173);
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    // font-family: 'Fredoka One', cursive;
+    // font-family: 'Righteous', cursive;
+    font-family: 'Cabin', sans-serif;
+
+}
+
+button{
+    height: 60px;
+    width: 200px;
+    border: none;
+    border-radius: 15px;
+    background-color: $global;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    transition: .3s ease-in-out;
+    &:hover{
+        background-color: rgb(6, 100, 118);
+    }
+}
