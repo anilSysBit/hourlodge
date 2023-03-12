@@ -5,6 +5,7 @@ import SearchByPlace from '../components/SearchByPlace'
 import OurFeatures from '../components/OurFeatures'
 import Qualities from '../components/Qualities'
 import Footer from '../components/Footer'
+import UserTabulation from '../components/UserTabulation'
 
 
 const cities = [
@@ -76,6 +77,8 @@ const HomePage = () => {
             </div>
             <div className="ads_container"></div>
             <Qualities />
+            <div className="ads_container"></div>
+            <UserTabulation />
             <div className="ads_container"></div>
             <Footer/>
         </>
