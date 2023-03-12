@@ -227,29 +227,6 @@ $footer_color:rgb(3, 38, 45);
 
         }
 
-        .list_of_features {
-            position: absolute;
-            // border: 2px solid black;
-            height: 100%;
-            right: 50%;
-            transform: translate(100%);
-            z-index: 5;
-            display: flex;
-            place-content: center;
-            place-items: center;
-
-            ul {
-                list-style-image: url('../../assets/icons8-tick-box.svg');
-
-                li {
-                    font-size: 20px;
-                    padding: 5px;
-                    margin: 5px;
-                    font-weight: bold;
-                }
-            }
-        }
-
         .features_image_container {
             right: 0;
             // border: 2px solid green;
@@ -266,6 +243,29 @@ $footer_color:rgb(3, 38, 45);
     }
 }
 
+// designing list
+.list_of_features {
+    position: absolute;
+    // border: 2px solid black;
+    height: 100%;
+    right: 50%;
+    transform: translate(100%);
+    z-index: 5;
+    display: flex;
+    place-content: center;
+    place-items: center;
+
+    ul {
+        list-style-image: url('../../assets/icons8-tick-box.svg');
+
+        li {
+            font-size: 20px;
+            padding: 5px;
+            margin: 5px;
+            font-weight: bold;
+        }
+    }
+}
 $mobile_cover: rgb(220, 247, 249);
 
 .mobile_app_container {
@@ -430,4 +430,69 @@ $mobile_cover: rgb(220, 247, 249);
     height: 200px;
     width: 100%;
     z-index: -10;
+}
+
+.popop_message_container{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index:10;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    // opacity: .5;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    place-content: center;
+    .popop_internal_container{
+        height: 80%;
+        width: 60%;
+        background-color: $feature_color;
+        border-radius: 15px;
+        display: flex;
+        place-items: center;
+        flex-direction: column;
+        position: relative;
+        z-index: 11;
+        .header_text{
+            text-align: center;
+            position: absolute;
+            top: 100px;
+        }
+        .list_of_features{
+            position:absolute;
+            margin-right: 150px;
+            // border: 2px solid black;
+            width: 300px;
+        }
+        .try_mobile_text{
+            position: absolute;
+            text-align: center;
+            bottom: 50px;
+        }
+        button{
+            position:absolute;
+            z-index: 39;
+            top: 10px;
+        }
+        animation: popani .5s linear 1;
+
+        @keyframes popani {
+            from{scale: 0;}
+            to{scale: 1;}
+        }
+    }
+}
+
+@media screen and (max-width:600px) {
+    .popop_message_container{
+        .popop_internal_container{
+            height: 80%;
+            width: 90%;
+            h1{
+                font-size: 30px;
+            }
+        }
+    }
 }

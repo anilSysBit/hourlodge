@@ -1,10 +1,10 @@
 import { useState } from 'react'
+import "./styles/main.css"
 import reactLogo from './assets/react.svg'
 import HomePage from './pages/HomePage'
 
 function App() {
   const [count, setCount] = useState(0)
-
   return (
     <div className="App">
       <HomePage/>

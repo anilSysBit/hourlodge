@@ -5,7 +5,7 @@ interface Data {
     hotel: number;
     city: number;
   }
-const UserTabulation = () => {
+const UserTabulation:React.FC = () => {
     const fixedData ={
         user:1000,
         hotel:800,

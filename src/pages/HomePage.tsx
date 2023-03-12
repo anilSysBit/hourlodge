@@ -6,6 +6,7 @@ import OurFeatures from '../components/OurFeatures'
 import Qualities from '../components/Qualities'
 import Footer from '../components/Footer'
 import UserTabulation from '../components/UserTabulation'
+import PopopMessage from '../features/PopopMessage'
 
 
 const cities = [
@@ -19,13 +20,15 @@ const cities = [
 ]
 const HomePage = () => {
     // const [currentDate,setCurrentDate] = useState();
+    const [pop,setPop] = useState(true);
     let newDate = new Date();
     let currentDate = newDate.toISOString().split('T')[0];
     let currentTime = newDate.toTimeString().slice(0, 5);
-
+    const screen =()=> setPop(false);
     return (
         <>
             <div className="home_main_container">
+                {pop ? <PopopMessage screen={screen}/> : null}
                 <div className="photo_holder_container">
                     <Navigation />
                     <img src="https://th.bing.com/th/id/R.d2cdd4a6a6ed8cb699943fb2dc136e62?rik=rnPHug8q5KM%2beA&pid=ImgRaw&r=0" alt="hotelroom" />
