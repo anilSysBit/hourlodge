@@ -52,7 +52,7 @@ const FAQ = () => {
                             <div className={`accordin_container ${jpt ? null : `accordin_toogle${index}`}`} onClick={handleAccordinClick}>
                                 <style>{`
                                     .accordin_toogle${index}{
-                                        height: 50px;
+                                        height: 60px;
                                         overflow: hidden;
                                     }
                                 `}</style>

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
 .home_main_container {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
 }
 .home_main_container .photo_holder_container {
   position: relative;
