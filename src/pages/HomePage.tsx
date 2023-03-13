@@ -7,6 +7,7 @@ import Qualities from '../components/Qualities'
 import Footer from '../components/Footer'
 import UserTabulation from '../components/UserTabulation'
 import PopopMessage from '../features/PopopMessage'
+import FAQ from '../components/FAQ'
 
 
 const cities = [
@@ -82,6 +83,8 @@ const HomePage = () => {
             <Qualities />
             <div className="ads_container"></div>
             <UserTabulation />
+            <div className="ads_container"></div>
+            <FAQ />
             <div className="ads_container"></div>
             <Footer/>
         </>

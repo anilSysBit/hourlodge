@@ -3,6 +3,7 @@
 $image-fade: rgb(7, 146, 173);
 $feature_color: #cad8db;
 $footer_color:rgb(3, 38, 45);
+$mobile_cover: rgb(220, 247, 249);
 .home_main_container {
     height: 100vh;
     width: 100%;
@@ -22,7 +23,8 @@ $footer_color:rgb(3, 38, 45);
             width: 50%;
             // border: 5px solid black;
             position: absolute;
-            background-image: linear-gradient(90deg, $image-fade, $image-fade, transparent);
+            background-image: linear-gradient(90deg, $image-fade,$image-fade
+            , transparent);
             display: flex;
             place-content: center;
             padding: 20px;
@@ -189,7 +191,6 @@ $footer_color:rgb(3, 38, 45);
                     border: 3px solid white;
                     scale: 1.2;
                     filter: grayscale(0);
-
                 }
             }
         }
@@ -266,7 +267,6 @@ $footer_color:rgb(3, 38, 45);
         }
     }
 }
-$mobile_cover: rgb(220, 247, 249);
 
 .mobile_app_container {
     height: 300px;
@@ -418,6 +418,72 @@ $mobile_cover: rgb(220, 247, 249);
         }
     }
 }
+
+.faq_container{
+    margin-top: 20px;
+    // height: 500px;
+    width: 100%;
+    // background-color: rgb(217, 212, 212);
+    background-image: linear-gradient(transparent,rgb(232, 251, 254),rgb(254, 238, 254),transparent);
+    display: flex;
+    place-content: center;
+    place-items: center;
+    flex-direction: column;
+    row-gap: 50px;
+    padding: 20px;
+
+    h1{
+        font-size: 40px;
+    }
+    .internal_faq_container{
+        height: 80%;
+        width: 90%;
+        transition: .5s ease;
+        display: flex;
+        // flex-wrap: wrap;
+        flex-flow: row wrap;
+        place-content: center;
+        row-gap: 70px;
+        column-gap: 100px;
+        user-select: none;
+        // border: 2px solid black;
+    }
+}
+
+// Accordin Container ------------------------------------
+
+.accordin_container{
+    width: 40%;
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+    transition: .5s ease-in;
+    box-shadow: 2px 2px 10px $feature_color;
+    // border: 2px solid black;
+    background-color: white;
+    color: rgb(128, 126, 126);
+    .question_container{
+        display: flex;
+        place-items: center;
+        height: 50px;
+        transition: .5s ease;
+        h3{
+            margin-left: 20px;
+            font-size: 16px;
+        }
+    }
+    .answer_text{
+        margin-left: 20px;
+        padding: 10px;
+        font-size: 15px;
+    }
+    .arrow{
+        font-size: 2em;
+    }
+}
+
+//---------------------------------------------------
+
 
 
 .footer_container{

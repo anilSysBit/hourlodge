@@ -7,7 +7,7 @@ interface Data {
   }
 const UserTabulation:React.FC = () => {
     const fixedData ={
-        user:1000,
+        user:100,
         hotel:800,
         city:70
     }
