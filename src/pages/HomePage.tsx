@@ -8,27 +8,14 @@ import Footer from '../components/Footer'
 import UserTabulation from '../components/UserTabulation'
 import PopopMessage from '../features/PopopMessage'
 import FAQ from '../components/FAQ'
-import DatePicker from 'react-date-picker'
-import 'react-date-picker/dist/DatePicker.css';
-import 'react-calendar/dist/Calendar.css';
+import FilterForm from '../components/FilterForm'
 
 
-const cities = [
-    { name: "Chitwan" },
-    { name: "Pokhara" },
-    { name: "Kathmandu" },
-    { name: "Dharan" },
-    { name: "Butwal" },
-    { name: "Chitwan" },
-    { name: "Pokhara" },
-]
+
 const HomePage = () => {
     // const [currentDate,setCurrentDate] = useState();
     const [pop,setPop] = useState(true);
-    const [date,setDate] = useState(new Date());
-    let newDate = new Date();
-    let currentDate = newDate.toISOString().split('T')[0];
-    let currentTime = newDate.toTimeString().slice(0, 5);
+
     const screen =()=> setPop(false);
     return (
         <>
@@ -43,32 +30,7 @@ const HomePage = () => {
                         <p>Choose hotels from all major places of Nepal</p>
                         <button className='hover_color global_button'>About US</button>
                     </div>
-                    <form action='#' className="filter_box_container">
-                        <div className="filter_select">
-                            <h3>City</h3>
-                            <select name="city" id="nepalcity">
-                                {
-                                    cities.map((elem, index) => {
-                                        return (
-                                            <option key={index} value={elem.name}>{elem.name}</option>
-                                        )
-                                    })
-                                }
-                            </select>
-                        </div>
-                        <div className='filter_select'>
-                            <h3>Date</h3>
-                            {/* <input type="date" className="datetime"  /> */}
-                            <DatePicker onChange={setDate} value={date} minDate={newDate} calendarClassName='ourstay_calendar'/>
-                        </div>
-                        <div className="filter_select">
-                            <h3>Time</h3>
-                            <input type="time" className="datetime" step={60} min={currentTime} />
-                        </div>
-                        <div className="filter_select">
-                            <button type='submit' className='global_button'>SEARCH</button>
-                        </div>
-                    </form>
+                    <FilterForm/>
                 </div>
             </div>
             <SearchByPlace />

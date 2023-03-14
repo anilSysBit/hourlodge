@@ -28,6 +28,12 @@ body{
     overflow: hidden;
     
 }
+
+button{
+    font-weight: bold;
+    border: none;
+
+}
 .global_button{
     height: 60px;
     width: 200px;
@@ -77,14 +83,107 @@ body{
 .ourstay_calendar{
     font-size: 1.4em;
     border-radius: 15px;
+    padding:10px;
+    position: absolute;
+    bottom: calc(100% + 100px);
+    right: 40%;
+    .react-calendar__tile{
+        font-size: 18px;
+
+    }
+    .react-calendar__navigation__label{
+        font-size: 18px;
+        background-color: $global;
+        color: white;
+        border-radius: 10px;
+
+        &:hover{
+            color: black;
+        }
+    }
+    .react-calendar__navigation__arrow{
+        font-size: 25px;
+    }
+    .react-calendar__tile--active{
+        background-color: $global;
+    }
 }
 
-.react-calendar__tile{
-    font-size: 18px;
-}
-.react-calendar__navigation__label{
-    font-size: 18px;
-}
-.react-calendar__navigation__arrow{
-    font-size: 25px;
+.time_container{
+    position: absolute;
+    // border: 5px solid black;
+    height: 310px;
+    max-width: 500px;
+    width: 300px;
+    background-color: white;
+    box-shadow: 2px 2px 15px rgb(168, 167, 167);
+    border-radius: 10px;
+    padding: 10px;
+    z-index:999;
+    bottom: calc(100% + 5px);
+    right: 10%;
+    .internal_time_container{
+
+        .am_pm_container{
+            width: 100%;
+            height: 20%;
+            // border: 2px solid green;
+            display: flex;
+            place-content: center;
+            place-items: center;
+
+            .time_button{
+                height: 50px;
+                width: 100px;
+                font-size: 15px;
+                // border: 2px solid black;
+                cursor: pointer;
+            }
+            .am_button{
+                border-radius: 10px 0px 0px 10px;
+            }
+            .pm_button{
+                border-radius: 0px 10px 10px 0px;
+            }
+            .am_pm_active{
+                background-color: $global;
+                color: white;
+            }
+        }
+        .time_tabulation_container{
+            height: 80%;
+            .time_internal_tabulation_container{
+                height: 50%;
+                .time_data_tabulation{
+                    display:grid;
+                    grid-template-columns: auto auto auto;
+                    row-gap: 20px;
+                    column-gap: 10px;
+
+                    padding: 10px;
+                    .time_box{
+                        height: 40px;
+                        width: 70px;
+                        background-color: rgb(230, 229, 229);
+                        display: flex;
+                        place-content: center;
+                        place-items: center;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        &:hover{
+                            background-color: rgb(213, 206, 206);
+                        }
+                    }
+                    .time_box_active{
+                        background-color: $global;
+                        color: white;
+                    }
+                    .time_box_inactive{
+                        text-decoration:line-through;
+                    }
+                }
+            }
+        }
+
+    }
 }
