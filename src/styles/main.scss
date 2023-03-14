@@ -28,7 +28,7 @@ body{
     overflow: hidden;
     
 }
-button{
+.global_button{
     height: 60px;
     width: 200px;
     border: none;
@@ -73,3 +73,18 @@ button{
     }
 }
 
+
+.ourstay_calendar{
+    font-size: 1.4em;
+    border-radius: 15px;
+}
+
+.react-calendar__tile{
+    font-size: 18px;
+}
+.react-calendar__navigation__label{
+    font-size: 18px;
+}
+.react-calendar__navigation__arrow{
+    font-size: 25px;
+}

@@ -76,7 +76,7 @@
 .home_main_container .photo_holder_container .filter_box_container .filter_select #nepalcity:focus {
   outline: none;
 }
-.home_main_container .photo_holder_container .filter_box_container .filter_select .datetime {
+.home_main_container .photo_holder_container .filter_box_container .filter_select .datetime, .home_main_container .photo_holder_container .filter_box_container .filter_select .react-date-picker__wrapper {
   height: 50px;
   border-radius: 15px;
   font-size: 20px;

@@ -18,7 +18,7 @@ body {
   overflow: hidden;
 }
 
-button {
+.global_button {
   height: 60px;
   width: 200px;
   border: none;
@@ -30,7 +30,7 @@ button {
   transition: 0.3s ease-in-out;
   cursor: pointer;
 }
-button:hover {
+.global_button:hover {
   background-color: rgb(3, 56, 82);
 }
 
@@ -61,4 +61,21 @@ button:hover {
 }
 .hover_color:hover {
   background-color: rgb(7, 100, 146);
+}
+
+.ourstay_calendar {
+  font-size: 1.4em;
+  border-radius: 15px;
+}
+
+.react-calendar__tile {
+  font-size: 18px;
+}
+
+.react-calendar__navigation__label {
+  font-size: 18px;
+}
+
+.react-calendar__navigation__arrow {
+  font-size: 25px;
 }/*# sourceMappingURL=main.css.map */

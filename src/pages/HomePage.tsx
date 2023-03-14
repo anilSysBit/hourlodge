@@ -8,6 +8,9 @@ import Footer from '../components/Footer'
 import UserTabulation from '../components/UserTabulation'
 import PopopMessage from '../features/PopopMessage'
 import FAQ from '../components/FAQ'
+import DatePicker from 'react-date-picker'
+import 'react-date-picker/dist/DatePicker.css';
+import 'react-calendar/dist/Calendar.css';
 
 
 const cities = [
@@ -22,6 +25,7 @@ const cities = [
 const HomePage = () => {
     // const [currentDate,setCurrentDate] = useState();
     const [pop,setPop] = useState(true);
+    const [date,setDate] = useState(new Date());
     let newDate = new Date();
     let currentDate = newDate.toISOString().split('T')[0];
     let currentTime = newDate.toTimeString().slice(0, 5);
@@ -37,7 +41,7 @@ const HomePage = () => {
                         <h1>OurStay Lodges Nepal</h1>
                         <h3>QuickStay with Nepal's best hourly hotel Service</h3>
                         <p>Choose hotels from all major places of Nepal</p>
-                        <button className='hover_color'>About US</button>
+                        <button className='hover_color global_button'>About US</button>
                     </div>
                     <form action='#' className="filter_box_container">
                         <div className="filter_select">
@@ -52,16 +56,17 @@ const HomePage = () => {
                                 }
                             </select>
                         </div>
-                        <div className="filter_select">
+                        <div className='filter_select'>
                             <h3>Date</h3>
-                            <input type="date" className="datetime" min={currentDate} />
+                            {/* <input type="date" className="datetime"  /> */}
+                            <DatePicker onChange={setDate} value={date} minDate={newDate} calendarClassName='ourstay_calendar'/>
                         </div>
                         <div className="filter_select">
                             <h3>Time</h3>
                             <input type="time" className="datetime" step={60} min={currentTime} />
                         </div>
                         <div className="filter_select">
-                            <button type='submit'>SEARCH</button>
+                            <button type='submit' className='global_button'>SEARCH</button>
                         </div>
                     </form>
                 </div>

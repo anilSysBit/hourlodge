@@ -20,7 +20,7 @@ const PopopMessage:React.FC<Props>=({screen}) => {
                 </ul>
             </div>
             <h1 className='try_mobile_text'>Try Using Desktop Mode in Mobile Phones</h1>
-            <button onClick={handlePopopClick}>Close</button>
+            <button onClick={handlePopopClick} className='global_button'>Close</button>
         </div>
     </div>
   )
