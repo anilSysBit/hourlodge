@@ -2,6 +2,7 @@
 .home_main_container {
   height: 100vh;
   width: 100vw;
+  background-image: linear-gradient(90deg, rgb(7, 146, 173), rgb(7, 146, 173), #c2ac8b, #c2ac8b);
   position: relative;
   transition: 0.5s ease;
 }
@@ -11,7 +12,7 @@
 }
 .home_main_container .photo_holder_container img {
   width: 100%;
-  height: 100vh;
+  height: 85vh;
   transform: scaleX(-1);
 }
 .home_main_container .photo_holder_container .overlap_image_container {
@@ -373,24 +374,90 @@
   display: flex;
   place-content: center;
   place-items: center;
+  flex-direction: column;
+}
+.footer_container .copyright_text {
+  text-align: center;
 }
 .footer_container .footer_internal_container {
-  width: 90%;
+  width: 95%;
   height: 95%;
-  border: 5px solid black;
   display: flex;
   place-content: center;
   place-items: center;
 }
 .footer_container .footer_internal_container .left_description_container {
-  border: 5px solid rgb(228, 45, 45);
   height: 80%;
   width: 40%;
+  text-align: justify;
+  padding: 10px;
+}
+.footer_container .footer_internal_container .left_description_container .data_description p {
+  margin-top: 30px;
+}
+.footer_container .footer_internal_container .left_description_container .social_media {
+  margin-top: 50px;
+}
+.footer_container .footer_internal_container .left_description_container .social_media ul {
+  list-style: none;
+  display: flex;
+}
+.footer_container .footer_internal_container .left_description_container .social_media ul li {
+  font-size: 20px;
+  margin: 25px;
 }
 .footer_container .footer_internal_container .right_details_container {
-  border: 5px solid rgb(228, 53, 53);
   width: 60%;
   height: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  place-content: center;
+  place-items: center;
+  transform: translateY(40px);
+}
+.footer_container .footer_internal_container .right_details_container .page_links {
+  width: 60%;
+  height: 50%;
+}
+.footer_container .footer_internal_container .right_details_container .page_links ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  place-content: center;
+  row-gap: 50px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+.footer_container .footer_internal_container .right_details_container .page_links ul li {
+  width: 40%;
+  font-size: 20px;
+}
+.footer_container .footer_internal_container .right_details_container .list_your_hotel {
+  width: 40%;
+  text-align: justify;
+}
+.footer_container .footer_internal_container .right_details_container .list_your_hotel p {
+  margin-top: 30px;
+}
+.footer_container .footer_internal_container .right_details_container .list_your_hotel button {
+  margin-top: 30px;
+  border-radius: 10px;
+  font-size: 20px;
+  height: 60px;
+  width: 80%;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  position: relative;
+}
+.footer_container .footer_internal_container .right_details_container .payment_channels {
+  width: 100%;
+  margin-top: 60px;
+}
+.footer_container .footer_internal_container .right_details_container .payment_channels img {
+  max-width: 100px;
+  height: 50px;
+  margin: 10px;
 }
 
 .ads_container {
