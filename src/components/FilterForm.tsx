@@ -23,7 +23,7 @@ const FilterForm = () => {
   const [croll,setCroll] = useState(0);
   let newDate = new Date();
   let maxDate = new Date();
-  const handleScroll:Function=()=>{
+  const handleScroll=()=>{
     setCroll(window.scrollY)
   }
   window.addEventListener('scroll',handleScroll);
