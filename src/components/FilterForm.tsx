@@ -66,7 +66,6 @@ const FilterForm = () => {
           className="datetime"
           min={currentTime}
           onClick={handleTimePicker}
-          onChange={e=>setSelectedTime(e.target.value)}
           value={selectedTime}
         />
 

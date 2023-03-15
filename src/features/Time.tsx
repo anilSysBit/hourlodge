@@ -16,9 +16,11 @@ const Time: React.FC<TimePickerProps> = ({ setSelectedTime }) => {
       selectedTime = "12:00";
     } else if (elem < 12 && meridian.pMeri) {
       selectedTime = `${(elem += 12)}:00`;
-    } else if (elem == 12 && meridian.aMeri) {
-      selectedTime = "00:00";
-    } else {
+    } else if(elem == 12 && meridian.aMeri){
+      selectedTime = '00:00';
+    } else if (elem >= 10 && meridian.aMeri) {
+      selectedTime = `${elem}:00`;
+    }else {
       selectedTime = `0${elem}:00`;
     }
     console.log(selectedTime);
@@ -32,7 +34,8 @@ const Time: React.FC<TimePickerProps> = ({ setSelectedTime }) => {
             className={`time_button am_button ${
               meridian.aMeri ? "am_pm_active" : null
             }`}
-            onClick={()=>setMeridian((prev)=>{
+            onClick={(e:React.MouseEvent<HTMLButtonElement>)=>setMeridian((prev)=>{
+              e.preventDefault();
                 return{
                     aMeri:true,
                     pMeri:false
@@ -45,7 +48,8 @@ const Time: React.FC<TimePickerProps> = ({ setSelectedTime }) => {
             className={`time_button pm_button ${
               meridian.pMeri ? "am_pm_active" : null
             }`}
-            onClick={()=>setMeridian((prev)=>{
+            onClick={(e:React.MouseEvent<HTMLButtonElement>)=>setMeridian((prev)=>{
+              e.preventDefault()
                 return{
                     aMeri:false,
                     pMeri:true
