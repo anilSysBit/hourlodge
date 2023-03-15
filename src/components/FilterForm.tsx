@@ -4,7 +4,9 @@ import "react-date-picker/dist/DatePicker.css";
 import "react-calendar/dist/Calendar.css";
 import Time from "../features/Time";
 
-
+interface Props{
+  event:any
+}
 const cities = [
   { name: "Chitwan" },
   { name: "Pokhara" },
@@ -28,9 +30,7 @@ const FilterForm = () => {
   useEffect(()=>{
   })
 
-  const handleTimePicker = (
-    event
-  ) => {
+  const handleTimePicker = (event:React.MouseEvent<HTMLInputElement>) => {
     event.preventDefault();
     setShowTimePicker(!showTimePicker);
   };
