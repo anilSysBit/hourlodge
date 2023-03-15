@@ -72,7 +72,7 @@ button {
   height: 100px;
   width: 60%;
   background-color: white;
-  box-shadow: 2px 2px 20px rgb(7, 146, 173);
+  box-shadow: 2px 2px 20px rgb(201, 199, 199);
   border-radius: 20px;
   bottom: 40px;
   right: 50%;
@@ -81,7 +81,7 @@ button {
   place-content: center;
   -moz-column-gap: 20px;
        column-gap: 20px;
-  padding: 10px;
+  padding: 5px;
   z-index: 20;
 }
 .filter_box_container .filter_select {

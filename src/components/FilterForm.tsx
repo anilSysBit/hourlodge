@@ -20,23 +20,17 @@ const FilterForm = () => {
   const [date, setDate] = useState(new Date());
   const [showTimePicker, setShowTimePicker] = useState(false);
   const [selectedTime, setSelectedTime] = useState('12:00');
-
   const [croll,setCroll] = useState(0);
-  // const [enableScroll,setEnableScroll] = useState(false);
-
-
-
-
   let newDate = new Date();
   let maxDate = new Date();
+  const handleScroll:Function=()=>{
+    setCroll(window.scrollY)
+  }
+  window.addEventListener('scroll',handleScroll);
+
   maxDate.setMonth(maxDate.getMonth() + 1);
   let currentDate = newDate.toISOString().split("T")[0];
   let currentTime = date.toLocaleTimeString().slice(0,2).concat(":00")
-
-  window.onscroll = () => {
-    setCroll(Math.ceil(window.scrollY))
-    console.log(croll)
-  }
 
   const handleTimePicker = (event:React.MouseEvent<HTMLInputElement>) => {
     event.preventDefault();
@@ -95,12 +89,13 @@ const FilterForm = () => {
           className="datetime"
           min={currentTime}
           onClick={handleTimePicker}
+          onChange={()=>setSelectedTime(selectedTime)}
           value={selectedTime}
         />
         {showTimePicker ? <Time setSelectedTime={setSelectedTime} setShowTimePicker={setShowTimePicker}/> : null}
       </div>
       <div className="filter_select">
-        <button type="submit" className="global_button">
+        <button type="submit" className="global_button filter_button">
           SEARCH
         </button>
       </div>

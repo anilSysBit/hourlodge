@@ -50,7 +50,7 @@ const Qualities = () => {
                             data.map((elem,index)=>{
                                 let myImage = elem.imgSrc;
                                 return(
-                                    <div className={`slider_child slider_child${index}`}>
+                                    <div className={`slider_child slider_child${index}`} key={index}>
                                         <style>{`
                                             .slider_child${index}{
                                                 background-image:url('${myImage}');

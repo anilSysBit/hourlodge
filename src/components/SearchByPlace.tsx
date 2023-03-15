@@ -18,7 +18,7 @@ const SearchByPlace = () => {
             {
                 searchplaces.map((elem,index)=>{
                     return(
-                        <div className="photo_holder">
+                        <div className="photo_holder" key={index}>
                             <img src={elem.imgSrc} alt="places" />
                             <h3>{elem.name}</h3>
                     </div>

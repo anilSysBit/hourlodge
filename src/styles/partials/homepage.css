@@ -11,7 +11,7 @@
 }
 .home_main_container .photo_holder_container img {
   width: 100%;
-  height: 700px;
+  height: 100vh;
   transform: scaleX(-1);
 }
 .home_main_container .photo_holder_container .overlap_image_container {

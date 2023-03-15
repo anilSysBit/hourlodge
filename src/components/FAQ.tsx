@@ -49,7 +49,7 @@ const FAQ = () => {
                             setJpt(!jpt)
                         }
                         return (
-                            <div className={`accordin_container ${jpt ? null : `accordin_toogle${index}`}`} onClick={handleAccordinClick}>
+                            <div className={`accordin_container ${jpt ? null : `accordin_toogle${index}`}`} onClick={handleAccordinClick} key={index}>
                                 <style>{`
                                     .accordin_toogle${index}{
                                         height: 60px;
