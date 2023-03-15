@@ -4,9 +4,7 @@ import "react-date-picker/dist/DatePicker.css";
 import "react-calendar/dist/Calendar.css";
 import Time from "../features/Time";
 
-interface TimePickerEvent extends React.MouseEvent<HTMLInputElement> {
-  // additional properties or methods if needed
-}
+
 const cities = [
   { name: "Chitwan" },
   { name: "Pokhara" },
@@ -31,7 +29,7 @@ const FilterForm = () => {
   })
 
   const handleTimePicker = (
-    event: React.MouseEvent<HTMLInputElement>
+    event
   ) => {
     event.preventDefault();
     setShowTimePicker(!showTimePicker);
@@ -70,7 +68,6 @@ const FilterForm = () => {
           onClick={handleTimePicker}
           onChange={e=>setSelectedTime(e.target.value)}
           value={selectedTime}
-          hour12={true}
         />
 
         {showTimePicker ? <Time setSelectedTime={setSelectedTime}/> : null}
