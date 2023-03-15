@@ -27,7 +27,7 @@ const FilterForm = () => {
   })
 
   const handleTimePicker = (
-    event: React.MouseEvent<HTMLInputElement, MouseEvent>
+    event: React.MouseEvent<HTMLInputElement,MouseEvent>
   ) => {
     event.preventDefault();
     setShowTimePicker(!showTimePicker);
