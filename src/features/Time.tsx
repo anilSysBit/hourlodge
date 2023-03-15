@@ -12,6 +12,11 @@ const Time: React.FC<TimePickerProps> = ({
     aMeri: true,
     pMeri: false,
   });
+  const [activeIndex,setActiveIndex] = useState(-1);
+
+  const handleActiveClick =(item:number)=>{
+    setActiveIndex(item);
+  }
   const timeContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -88,13 +93,14 @@ const Time: React.FC<TimePickerProps> = ({
           <div className="time_internal_tabulation_container">
             <div className="time_data_tabulation">
               {timeArray.map((elem, index) => {
-                const [curTime, setCurTime] = useState(false);
                 return (
                   <div
-                    className={`time_box time_box${index}`}
+                    className={`time_box time_box${index} ${index == activeIndex ? 'time_box_active' : null}`}
                     key={index}
                     onClick={() => {
                       handleTimeBoxClick(elem);
+                      handleActiveClick(index)
+                      setShowTimePicker(false);
                     }}
                   >
                     <p>{elem}:00</p>

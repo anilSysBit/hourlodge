@@ -7,7 +7,8 @@ $mobile_cover: rgb(220, 247, 249);
 .home_main_container {
     height: 100vh;
     width: 100vw;
-
+    position: relative;
+    transition: .5s ease;
     .photo_holder_container {
         position: relative;
         display: flex;
@@ -44,65 +45,6 @@ $mobile_cover: rgb(220, 247, 249);
             p {
                 color: white;
                 font-size: 20px;
-            }
-        }
-
-        .filter_box_container {
-            height: 120px;
-            width: 60%;
-            background-color: white;
-            // border: 5px solid black;
-            box-shadow: 2px 2px 20px $image-fade;
-            border-radius: 20px;
-            position: absolute;
-            bottom: -50px;
-            right: 50%;
-            transform: translateX(50%);
-            display: flex;
-            place-content: center;
-            column-gap: 20px;
-            padding: 10px;
-
-            .filter_select {
-                // border: 2px solid black;
-                height: 90%;
-                width: 33.33%;
-                display: flex;
-                place-content: center;
-                place-items: center;
-                flex-direction: column;
-                font-weight: bold;
-
-                h3 {
-                    font-size: 25px;
-                }
-
-                #nepalcity {
-                    font-family: 'Cabin', sans-serif;
-                    font-size: 20px;
-                    font-weight: bold;
-                    width: 100%;
-                    height: 50px;
-                    border: 3px solid $image-fade;
-                    border-radius: 15px;
-                    text-align: center;
-                    // appearance: none;
-
-                    &:focus {
-                        outline: none;
-                    }
-                }
-
-                .datetime,.react-date-picker__wrapper {
-                    height: 50px;
-                    // border: 3px solid $image-fade;
-                    border-radius: 15px;
-                    font-size: 20px;
-                    width: 100%;
-                    font-weight: bold;
-                    border: 3px solid $image-fade;
-                    text-align: center;
-                }
             }
         }
 
@@ -488,9 +430,31 @@ $mobile_cover: rgb(220, 247, 249);
 
 
 .footer_container{
-    height: 500px;
+    height: 90vh;
     width: 100%;
     background-image: linear-gradient(90deg,$image-fade,rgb(135, 12, 149));
+    color: white;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    .footer_internal_container{
+        width: 90%;
+        height: 95%;
+        border: 5px solid black;
+        display: flex;
+        place-content: center;
+        place-items: center;
+        .left_description_container{
+            border: 5px solid rgb(228, 45, 45);
+            height: 80%;
+            width: 40%;
+        }
+        .right_details_container{
+            border:5px solid rgb(228, 53, 53);
+            width: 60%;
+            height: 80%;
+        }
+    }
 }
 
 .ads_container{
@@ -503,7 +467,7 @@ $mobile_cover: rgb(220, 247, 249);
     height: 100vh;
     width: 100vw;
     position: fixed;
-    z-index:10;
+    z-index:999;
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.5);

@@ -30,9 +30,9 @@ const HomePage = () => {
                         <p>Choose hotels from all major places of Nepal</p>
                         <button className='hover_color global_button'>About US</button>
                     </div>
-                    <FilterForm/>
                 </div>
             </div>
+            <FilterForm/>
             <SearchByPlace />
             <OurFeatures />
             <div className="ads_container"></div>
