@@ -69,7 +69,7 @@ const FilterForm = () => {
           value={selectedTime}
         />
 
-        {showTimePicker ? <Time setSelectedTime={setSelectedTime}/> : null}
+        {showTimePicker ? <Time setSelectedTime={setSelectedTime} setShowTimePicker={setShowTimePicker}/> : null}
       </div>
       <div className="filter_select">
         <button type="submit" className="global_button">
