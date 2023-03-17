@@ -50,11 +50,12 @@ const Footer = () => {
             <img src="https://www.enepsters.com/wp-content/uploads/2018/03/Khalti-logo-570x300.jpg" alt="khalti" />
             <img src="https://broadwayinfosys.com/assets/images/imepay.png" alt="imepay" />
             <img src="https://th.bing.com/th/id/OIP.TQkOkUCjNbd_NTUKFq-9QAHaCB?pid=ImgDet&rs=1" alt="paypal" />
+            <img src="https://th.bing.com/th/id/R.226d70592f0bc4586bb8f315fa40f6e5?rik=iwdIfI9jWPwehQ&pid=ImgRaw&r=0" alt="connect" />
           </div>
           .
         </div>
       </div>
-      <h3 className='copyright_text'>Copyright@ 2023 All rights Reserved</h3>
+      <h3 className='copyright_text'>Copyright © 2023 All rights Reserved</h3>
     </div>
   )
 }

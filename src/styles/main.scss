@@ -81,21 +81,12 @@ button{
 
 .filter_box_container {
     position: absolute;
-    height: 100px;
-    width: 60%;
-    background-color: white;
-    // border: 5px solid black;
-    box-shadow: 2px 2px 20px rgb(201, 199, 199);
-    border-radius: 20px;
-    bottom: 40px;
-    right: 50%;
-    transform: translateX(50%);
     display: flex;
     place-content: center;
-    column-gap: 20px;
+    place-items: center;
     padding: 5px;
-    z-index: 20;
-
+    column-gap: 20px;
+    width: 100%;
     .filter_select {
         // border: 2px solid black;
         height: 90%;

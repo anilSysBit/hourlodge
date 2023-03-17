@@ -20,13 +20,9 @@ const FilterForm = () => {
   const [date, setDate] = useState(new Date());
   const [showTimePicker, setShowTimePicker] = useState(false);
   const [selectedTime, setSelectedTime] = useState('12:00');
-  const [croll,setCroll] = useState(0);
   let newDate = new Date();
   let maxDate = new Date();
-  const handleScroll=()=>{
-    setCroll(window.scrollY)
-  }
-  window.addEventListener('scroll',handleScroll);
+
 
   maxDate.setMonth(maxDate.getMonth() + 1);
   let currentDate = newDate.toISOString().split("T")[0];
@@ -38,27 +34,6 @@ const FilterForm = () => {
   };
   return (
     <form className="filter_box_container" onSubmit={(e:React.FormEvent<HTMLFormElement>)=>e.preventDefault()}>
-      <style>{`
-          ${croll > 600 ? `
-            .filter_box_container{
-              top:0;
-              position:fixed;
-              width:100%;
-              border-radius:0;
-            }
-            .ourstay_calendar{
-              top:calc(100% + 70px);
-            }
-            .time_container{
-              top:calc(100% + 10px);
-              right:30%;
-            }
-          ` : `
-            .ourstay_calendar{
-              bottom: calc(100% + 100px);
-            }
-          `}
-      `}</style>
       <div className="filter_select">
         <h3>City</h3>
         <select name="city" id="nepalcity">

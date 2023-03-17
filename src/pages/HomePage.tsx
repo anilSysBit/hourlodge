@@ -4,7 +4,6 @@ import Navigation from '../components/Navigation'
 import SearchByPlace from '../components/SearchByPlace'
 import OurFeatures from '../components/OurFeatures'
 import Qualities from '../components/Qualities'
-import Footer from '../components/Footer'
 import UserTabulation from '../components/UserTabulation'
 import PopopMessage from '../features/PopopMessage'
 import FAQ from '../components/FAQ'
@@ -15,7 +14,11 @@ import FilterForm from '../components/FilterForm'
 const HomePage = () => {
     // const [currentDate,setCurrentDate] = useState();
     const [pop,setPop] = useState(true);
-
+    const [croll,setCroll] = useState(0);
+    const handleScroll=()=>{
+        setCroll(window.scrollY)
+      }
+      window.addEventListener('scroll',handleScroll);
     const screen =()=> setPop(false);
     return (
         <>
@@ -32,7 +35,30 @@ const HomePage = () => {
                     </div>
                 </div>
             </div>
-            <FilterForm/>
+            <div className="homepage_filter_container">
+            <style>{`
+            ${croll > 600 ? `
+            .homepage_filter_container{
+              top:0;
+              position:fixed;
+              width:100%;
+              border-radius:0;
+            }
+            .ourstay_calendar{
+              top:calc(100% + 70px);
+            }
+            .time_container{
+              top:calc(100% + 10px);
+              right:30%;
+            }
+          ` : `
+            .ourstay_calendar{
+              bottom: calc(100% + 100px);
+            }
+          `}
+      `}</style>
+                <FilterForm/>
+            </div>
             <SearchByPlace />
             <OurFeatures />
             <div className="ads_container"></div>
@@ -53,7 +79,6 @@ const HomePage = () => {
             <div className="ads_container"></div>
             <FAQ />
             <div className="ads_container"></div>
-            <Footer/>
         </>
     )
 }

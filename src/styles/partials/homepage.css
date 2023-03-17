@@ -57,6 +57,21 @@
   font-size: 20px;
 }
 
+.homepage_filter_container {
+  position: absolute;
+  height: 100px;
+  width: 60%;
+  background-color: white;
+  box-shadow: 2px 2px 20px rgb(201, 199, 199);
+  border-radius: 20px;
+  bottom: 40px;
+  right: 50%;
+  transform: translateX(50%);
+  display: flex;
+  place-content: center;
+  z-index: 20;
+}
+
 .search_by_place_container {
   height: 200px;
   width: 100%;
