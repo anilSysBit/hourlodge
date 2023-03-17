@@ -30,10 +30,10 @@ const Time: React.FC<TimePickerProps> = ({
     }
   };
 
-  const  handleTimePicker=(e:MouseEvent)=>{
-    e.preventDefault();
+  const handleTimePicker = (event:React.MouseEvent<HTMLInputElement>) => {
+    event.preventDefault();
     setDisplayPicker(true);
-  }
+  };
   const handleTimeBoxClick = (elem: number) => {
     let selectedTime;
     if (elem == 12 && meridian.pMeri) {
