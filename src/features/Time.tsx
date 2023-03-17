@@ -1,41 +1,39 @@
 import React, { useState, useRef, useEffect } from "react";
 
 interface TimePickerProps {
-  setSelectedTime: (time: string) => void;
-  setShowTimePicker: (state: boolean) => void;
+  currentTime:any,
 }
 const Time: React.FC<TimePickerProps> = ({
-  setSelectedTime,
-  setShowTimePicker,
+  currentTime
 }) => {
   const [meridian, setMeridian] = useState({
     aMeri: true,
     pMeri: false,
   });
   const [activeIndex,setActiveIndex] = useState(-1);
+  const [displayPicker,setDisplayPicker] = useState(false);
+  const [selectedTime, setSelectedTime] = useState('12:00');
+  const timeContainerRef = useRef<HTMLDivElement>(null);
+  const timeArray = [12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+
 
   const handleActiveClick =(item:number)=>{
     setActiveIndex(item);
   }
-  const timeContainerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        timeContainerRef.current &&
-        !timeContainerRef.current.contains(event.target as Node)
-      ) {
-        setShowTimePicker(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      timeContainerRef.current &&
+      !timeContainerRef.current.contains(event.target as Node)
+    ) {
+      setDisplayPicker(false);
+    }
+  };
 
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [timeContainerRef]);
-  const timeArray = [12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
-
+  const  handleTimePicker=(e:MouseEvent)=>{
+    e.preventDefault();
+    setDisplayPicker(true);
+  }
   const handleTimeBoxClick = (elem: number) => {
     let selectedTime;
     if (elem == 12 && meridian.pMeri) {
@@ -52,8 +50,28 @@ const Time: React.FC<TimePickerProps> = ({
     console.log(selectedTime);
     setSelectedTime(selectedTime);
   };
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [timeContainerRef]);
   return (
+    <>
+      <input
+          type="time"
+          className="datetime"
+          min={currentTime}
+          onClick={handleTimePicker}
+          onChange={()=>setSelectedTime(selectedTime)}
+          value={selectedTime}
+        />
     <div className="time_container" ref={timeContainerRef}>
+      <style>{`
+        .time_container{
+          display:${displayPicker ? 'block':'none'};
+        }
+      `}</style>
       <div className="internal_time_container">
         <div className="am_pm_container">
           <button
@@ -100,7 +118,7 @@ const Time: React.FC<TimePickerProps> = ({
                     onClick={() => {
                       handleTimeBoxClick(elem);
                       handleActiveClick(index)
-                      setShowTimePicker(false);
+                      setDisplayPicker(false);
                     }}
                   >
                     <p>{elem}:00</p>
@@ -112,6 +130,7 @@ const Time: React.FC<TimePickerProps> = ({
         </div>
       </div>
     </div>
+    </>
   );
 };
 

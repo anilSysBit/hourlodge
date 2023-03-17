@@ -18,8 +18,6 @@ const cities = [
 ];
 const FilterForm = () => {
   const [date, setDate] = useState(new Date());
-  const [showTimePicker, setShowTimePicker] = useState(false);
-  const [selectedTime, setSelectedTime] = useState('12:00');
   let newDate = new Date();
   let maxDate = new Date();
 
@@ -28,10 +26,7 @@ const FilterForm = () => {
   let currentDate = newDate.toISOString().split("T")[0];
   let currentTime = date.toLocaleTimeString().slice(0,2).concat(":00")
 
-  const handleTimePicker = (event:React.MouseEvent<HTMLInputElement>) => {
-    event.preventDefault();
-    setShowTimePicker(!showTimePicker);
-  };
+
   return (
     <form className="filter_box_container" onSubmit={(e:React.FormEvent<HTMLFormElement>)=>e.preventDefault()}>
       <div className="filter_select">
@@ -59,15 +54,7 @@ const FilterForm = () => {
       </div>
       <div className="filter_select">
         <h3>Time</h3>
-        <input
-          type="time"
-          className="datetime"
-          min={currentTime}
-          onClick={handleTimePicker}
-          onChange={()=>setSelectedTime(selectedTime)}
-          value={selectedTime}
-        />
-        {showTimePicker ? <Time setSelectedTime={setSelectedTime} setShowTimePicker={setShowTimePicker}/> : null}
+          <Time currentTime={currentTime}/>
       </div>
       <div className="filter_select">
         <button type="submit" className="global_button filter_button">
