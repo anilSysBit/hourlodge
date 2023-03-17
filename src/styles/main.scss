@@ -98,7 +98,7 @@ button{
         font-weight: bold;
 
         h3 {
-            font-size: 25px;
+            font-size: 20px;
         }
 
         #nepalcity {
@@ -222,6 +222,13 @@ button{
                         &:hover{
                             background-color: rgb(213, 206, 206);
                         }
+                        
+                    }
+                    .time_box_am{
+                        display: none;
+                    }
+                    .time_box_pm{
+                        display: none;
                     }
                     .time_box_active{
                         background-color: $global;

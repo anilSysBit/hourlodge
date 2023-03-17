@@ -87,7 +87,7 @@ button {
   font-weight: bold;
 }
 .filter_box_container .filter_select h3 {
-  font-size: 25px;
+  font-size: 20px;
 }
 .filter_box_container .filter_select #nepalcity {
   font-family: "Cabin", sans-serif;
@@ -200,6 +200,12 @@ button {
 }
 .time_container .internal_time_container .time_tabulation_container .time_internal_tabulation_container .time_data_tabulation .time_box:hover {
   background-color: rgb(213, 206, 206);
+}
+.time_container .internal_time_container .time_tabulation_container .time_internal_tabulation_container .time_data_tabulation .time_box_am {
+  display: none;
+}
+.time_container .internal_time_container .time_tabulation_container .time_internal_tabulation_container .time_data_tabulation .time_box_pm {
+  display: none;
 }
 .time_container .internal_time_container .time_tabulation_container .time_internal_tabulation_container .time_data_tabulation .time_box_active {
   background-color: rgb(7, 146, 173);
