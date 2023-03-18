@@ -6,7 +6,7 @@ $footer_color:rgb(3, 38, 45);
 $mobile_cover: rgb(220, 247, 249);
 .home_main_container {
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background-image: linear-gradient(90deg,$image-fade,$image-fade,#c2ac8b,#c2ac8b);
     position: relative;
     transition: .5s ease;
@@ -78,6 +78,7 @@ $mobile_cover: rgb(220, 247, 249);
     position: absolute;
     height: 120px;
     width: 60%;
+    max-width: 1920px;
     background-color: white;
     // border: 5px solid black;
     box-shadow: 2px 2px 20px rgb(201, 199, 199);

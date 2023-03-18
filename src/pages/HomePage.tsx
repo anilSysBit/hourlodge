@@ -32,20 +32,18 @@ const HomePage = () => {
             <h3>QuickStay with Nepal's best hourly hotel Service</h3>
             <p>Choose hotels from all major places of Nepal</p>
             <a href="#aboutus">
-              <button className="hover_color global_button">
-                About US
-              </button>
+              <button className="hover_color global_button">About US</button>
             </a>
-            <span id='top'></span>
+            <span id="top"></span>
           </div>
         </div>
       </div>
       <div className="homepage_filter_container"
-      id="filter"
-        onClick={()=>{
-            if(croll < 600){
-              window.scrollTo({top:500,behavior:'smooth'})
-            }
+        id="filter"
+        onClick={() => {
+          if (croll < 600) {
+            window.scrollTo({ top: 500, behavior: "smooth" });
+          }
         }}
       >
         <style>{`
