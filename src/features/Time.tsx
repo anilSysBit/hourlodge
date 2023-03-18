@@ -68,7 +68,7 @@ const Time: React.FC<TimePickerProps> = ({ currentTime }) => {
         onChange={() => setSelectedTime(selectedTime)}
         value={selectedTime}
       />
-      <div className="time_container" ref={timeContainerRef}>
+      <div className={`time_container`} ref={timeContainerRef}>
         <style>{`
         .time_container{
           display:${displayPicker ? "block" : "none"};
@@ -104,7 +104,7 @@ const Time: React.FC<TimePickerProps> = ({ currentTime }) => {
                       } ${
                         !meridian.pMeri && index >= 12 ? "time_box_pm" : ""
                       } time_box${index} ${
-                        index == activeIndex ? "time_box_active" : null
+                        index == activeIndex ? "time_box_active" : ""
                       }`}
                       key={index}
                       onClick={() => {

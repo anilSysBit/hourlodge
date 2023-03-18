@@ -76,17 +76,18 @@ $mobile_cover: rgb(220, 247, 249);
 
 .homepage_filter_container{
     position: absolute;
-    height: 100px;
+    height: 120px;
     width: 60%;
     background-color: white;
     // border: 5px solid black;
     box-shadow: 2px 2px 20px rgb(201, 199, 199);
-    border-radius: 20px;
+    border-radius: 15px;
     bottom: 40px;
     right: 50%;
     transform: translateX(50%);
     display: flex;
     place-content: center;
+    padding: 10px;
     z-index: 20;
 }
 .search_by_place_container {
@@ -293,8 +294,6 @@ $mobile_cover: rgb(220, 247, 249);
                     height: 400px;
                     border-radius: 15px;
                     color: white;
-                    display: flex;
-                    place-content: center;
                     transition: .5s;
                     position: relative;
                     overflow: hidden;

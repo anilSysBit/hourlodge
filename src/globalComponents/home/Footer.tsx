@@ -13,7 +13,7 @@ const Footer = () => {
     <div className="footer_container">
       <div className="footer_internal_container">
         <div className="left_description_container">
-          <div className="data_description">
+          <div className="data_description" id='aboutus'>
             <h1>#OurStay</h1>
             <p>"Our hourly hotel service offers guests the convenience of booking a hotel room for just the hours they need, whether it's for a quick nap, a meeting, or a rest between flights."Our hourly hotel service is designed to offer guests the ultimate flexibility and convenience when it comes to booking a hotel room. Whether it's for a quick power nap, a meeting, a layover, or simply a few hours of relaxation, our service allows guests to book a room for as little as one hour or as long as they need. With our easy-to-use online booking platform, guests can choose from a range of hotel rooms at competitive rates and enjoy access to all the amenities and services offered by the hotel. For hoteliers, our service provides a new revenue stream by utilizing vacant rooms during off-peak hours and attracting a new demographic of customers who may not need an overnight stay.</p>
           </div>

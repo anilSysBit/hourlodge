@@ -38,7 +38,10 @@ const Qualities = () => {
         slidesToScroll: 1,
         nextArrow:<ArrowForwardIosIcon/>,
         prevArrow:<ArrowBackIosIcon/>,
-        arrows:false
+        arrows:false,
+        autoplay: true,
+        autoplaySpeed:2000,
+        cssEase:'linear'
     };
     return (
         <div className="qualities_container">

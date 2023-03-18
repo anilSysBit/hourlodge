@@ -76,6 +76,7 @@ button {
   -moz-column-gap: 20px;
        column-gap: 20px;
   width: 100%;
+  background-color: white;
 }
 .filter_box_container .filter_select {
   height: 90%;
@@ -117,7 +118,9 @@ button {
   border-radius: 15px;
   padding: 10px;
   position: absolute;
+  top: calc(100% + 10px);
   right: 40%;
+  z-index: 10;
 }
 .ourstay_calendar .react-calendar__tile {
   font-size: 18px;
@@ -148,8 +151,8 @@ button {
   border-radius: 10px;
   padding: 10px;
   z-index: 999;
-  bottom: calc(100% + 5px);
-  right: 10%;
+  top: calc(100% + 5px);
+  right: calc(20% + 5px);
 }
 .time_container .internal_time_container .am_pm_container {
   width: 100%;
@@ -216,4 +219,16 @@ button {
 }
 .time_container .internal_time_container .time_tabulation_container .time_internal_tabulation_container .time_data_tabulation .time_box_inactive {
   text-decoration: line-through;
+}
+
+.explore_main_container .explore_navigation_container {
+  background-color: white;
+}
+
+.display_none {
+  display: none;
+}
+
+.react-date-picker__clear-button {
+  display: none;
 }/*# sourceMappingURL=main.css.map */
