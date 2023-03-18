@@ -43,7 +43,9 @@ const HomePage = () => {
       <div className="homepage_filter_container"
       id="filter"
         onClick={()=>{
-            window.location.href = croll < 600 ? '#top' : '#filter'
+            if(croll < 600){
+              window.scrollTo({top:500,behavior:'smooth'})
+            }
         }}
       >
         <style>{`
@@ -51,20 +53,34 @@ const HomePage = () => {
                   croll > 600
                     ? `
                     .homepage_filter_container{
-                        position:fixed;
-                        top:0;
-                        width:100%;
-                        height:100px;
-                        border-radius:0;
-                    }
+                      position:fixed;
+                      top:0;
+                      width:100%;
+                      height:100px;
+                      border-radius:0;
+                  }
+                  .
+                  .homepage_filter_container .filter_box_container{
+                    position:absolute;
+                    left:0;
+                  }
+  
                     .homepage_filter_container .ourstay_calendar{
                         top:calc(100% + 60px);
                     }
                     .homepage_filter_container .time_container{
                         top:calc(100% + 5px);
                     }
+                    
                 `
                     : `
+                    .homepage_filter_container .filter_box_container .filter_select img{
+                      display:none;
+                    }
+                    .homepage_filter_container .filter_box_container .filter_select .filter_login_signup{
+                      display:none;
+                    }
+
                 `
                 }
             `}</style>

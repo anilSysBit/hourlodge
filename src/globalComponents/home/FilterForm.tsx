@@ -3,19 +3,13 @@ import DatePicker from "react-date-picker";
 import "react-date-picker/dist/DatePicker.css";
 import "react-calendar/dist/Calendar.css";
 import Time from "../../features/Time";
+import CityList from "../../features/CityList";
+import fakeLogo from '../../assets/fakelogo.jpeg'
 
 interface Props{
   event:any
 }
-const cities = [
-  { name: "Chitwan" },
-  { name: "Pokhara" },
-  { name: "Kathmandu" },
-  { name: "Dharan" },
-  { name: "Butwal" },
-  { name: "Chitwan" },
-  { name: "Pokhara" },
-];
+
 const FilterForm = () => {
   const [date, setDate] = useState(new Date());
   let newDate = new Date();
@@ -30,16 +24,14 @@ const FilterForm = () => {
   return (
     <form className="filter_box_container" onSubmit={(e:React.FormEvent<HTMLFormElement>)=>e.preventDefault()}>
       <div className="filter_select">
+        <img src={fakeLogo} alt="" />
+      </div>
+      <div className="filter_select">
+        <h3 className="filter_login_signup">Login/ Signup</h3>
+      </div>
+      <div className="filter_select">
         <h3>City</h3>
-        <select name="city" id="nepalcity">
-          {cities.map((elem, index) => {
-            return (
-              <option key={index} value={elem.name}>
-                {elem.name}
-              </option>
-            );
-          })}
-        </select>
+        <CityList/>
       </div>
       <div className="filter_select">
         <h3>Date</h3>
@@ -60,7 +52,11 @@ const FilterForm = () => {
         <button type="submit" className="global_button filter_button">
           SEARCH
         </button>
+        
       </div>
+      {/* <div className="filter_select login_nav_option">
+        <h3>Login/signup</h3>
+      </div> */}
     </form>
   );
 };
