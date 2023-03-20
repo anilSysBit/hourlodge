@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-
+import { useSelector } from "react-redux/es/hooks/useSelector";
+import { RootState } from "../../store";
 interface Data {
   user: number;
   hotel: number;

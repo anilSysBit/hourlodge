@@ -14,7 +14,7 @@ const SmartFilter = () => {
                 text-align:center;
             }
             .smart_body_container{
-                border:3px solid green;
+            border:3px solid green;
             }
         `}</style>
         <div className="smart_header">

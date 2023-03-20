@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux/es/hooks/useSelector";
+import { RootState } from "../store";
 import "../styles/partials/homepage.css";
 import Navigation from "../globalComponents/home/Navigation";
 import SearchByPlace from "../globalComponents/home/SearchByPlace";
@@ -9,15 +11,14 @@ import UserTabulation from "../globalComponents/home/UserTabulation";
 import FAQ from "../globalComponents/home/FAQ";
 import FilterForm from "../globalComponents/home/FilterForm";
 
+
+
+
 const HomePage = () => {
-  // const [currentDate,setCurrentDate] = useState();
-
-  const [croll, setCroll] = useState(0);
-  const handleScroll = () => {
-    setCroll(window.scrollY);
-  };
-  window.addEventListener("scroll", handleScroll);
-
+  const scroll = useSelector((state:RootState)=>{
+    console.log(state.screen)
+    return state.screen.scrollWidth
+  })
   return (
     <>
       <div className="home_main_container">
@@ -41,14 +42,14 @@ const HomePage = () => {
       <div className="homepage_filter_container"
         id="filter"
         onClick={(e) => {
-          if (croll < 600) {
+          if (scroll < 600) {
             window.scrollTo({ top: 500, behavior: "smooth" });
           }
         }}
       >
         <style>{`
                 ${
-                  croll > 600
+                  scroll > 600
                     ? `
                     .homepage_filter_container{
                       position:fixed;
