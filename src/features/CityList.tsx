@@ -61,8 +61,8 @@ const CityList = () => {
     control: (provided, state) => ({
       ...provided,
       width: "100%",
-      border: "3px solid rgb(7, 146, 173)",
-      borderRadius: "15px",
+      border: "2px solid var(--global)",
+      borderRadius: "10px",
       padding: "5px",
       fontSize: "20px",
     }),
@@ -87,6 +87,7 @@ const CityList = () => {
   return (
     <Select
       styles={customStyles}
+      className={'city_select'}
       defaultValue={cityOptions[0]}
       isClearable={isClearable}
       isSearchable={isSearchable}

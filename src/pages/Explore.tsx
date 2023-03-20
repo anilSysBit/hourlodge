@@ -1,4 +1,6 @@
 import React from "react";
+import SmartFilter from "../features/SmartFilter";
+import Hotels from "../globalComponents/explore/Hotels";
 import FilterForm from "../globalComponents/home/FilterForm";
 import "../styles/main.css";
 
@@ -8,7 +10,12 @@ const Explore = () => {
       <div className="explore_navigation_container adjust_global_width">
         <FilterForm />
       </div>
-      <h1>Explore</h1>
+        <div className="explore_filter_container">
+          <SmartFilter />
+        </div>
+      <div className="explore_body_container">
+        <Hotels/>
+      </div>
     </div>
   );
 };

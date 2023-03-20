@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import DatePicker from "react-date-picker";
 import "react-date-picker/dist/DatePicker.css";
 import "react-calendar/dist/Calendar.css";
@@ -14,7 +15,6 @@ const FilterForm = () => {
   const [date, setDate] = useState(new Date());
   let newDate = new Date();
   let maxDate = new Date();
-
   maxDate.setMonth(maxDate.getMonth() + 1);
   let currentDate = newDate.toISOString().split("T")[0];
   let currentTime = date.toLocaleTimeString().slice(0, 2).concat(":00");
@@ -28,7 +28,7 @@ const FilterForm = () => {
         <img src={fakeLogo} alt="" />
       </div>
       <div className="filter_select">
-        <h3 className="filter_login_signup">Login/ Signup</h3>
+        <h2 className="filter_login_signup">Login/ Signup</h2>
       </div>
       <div className="filter_select">
         <h3>City</h3>
@@ -50,9 +50,11 @@ const FilterForm = () => {
         <Time currentTime={currentTime} />
       </div>
       <div className="filter_select">
+        <Link to='/explore'>
         <button type="submit" className="global_button filter_button">
           SEARCH
         </button>
+        </Link>
       </div>
       {/* <div className="filter_select login_nav_option">
         <h3>Login/signup</h3>

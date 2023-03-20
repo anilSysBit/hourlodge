@@ -40,7 +40,7 @@ const HomePage = () => {
       </div>
       <div className="homepage_filter_container"
         id="filter"
-        onClick={() => {
+        onClick={(e) => {
           if (croll < 600) {
             window.scrollTo({ top: 500, behavior: "smooth" });
           }
