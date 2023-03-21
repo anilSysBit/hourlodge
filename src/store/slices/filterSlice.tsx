@@ -1,10 +1,13 @@
+import { OptionUnstyledType } from "@mui/base";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { SingleValue } from "react-select";
 
 interface DateTimeState {
   date: Date|undefined;
   maxDate: Date|undefined;
   currentTime: string;
   selectedTime: string;
+  city:any;
 }
 
 
@@ -13,6 +16,7 @@ const initialState: DateTimeState = {
   maxDate: undefined,
   currentTime:'',
   selectedTime:'21:00',
+  city:{value:'chitwan',label:'Chitwan'},
 };
 
 const filterSlice = createSlice({
@@ -30,9 +34,12 @@ const filterSlice = createSlice({
     },
     setSelectedTime:(state,action:PayloadAction<string>)=>{
         state.selectedTime = action.payload
+    },
+    setCity:(state,action:PayloadAction<any>)=>{
+      state.city = action.payload;
     }
   },
 });
 
-export const {newDate,setSelectedTime} = filterSlice.actions;
+export const {newDate,setSelectedTime,setCity} = filterSlice.actions;
 export default filterSlice.reducer;

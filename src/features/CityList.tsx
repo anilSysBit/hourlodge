@@ -1,6 +1,9 @@
-import { height } from "@mui/system";
+
 import React, { useState } from "react";
-import Select, { StylesConfig } from "react-select";
+import { useDispatch,useSelector } from "react-redux";
+import Select,{StylesConfig} from "react-select";
+import { RootState } from "../store";
+import {setCity} from '../store/slices/filterSlice'
 
 interface OptionType {
   value: string;
@@ -9,6 +12,9 @@ interface OptionType {
 const CityList = () => {
   const [isClearable, setIsClearable] = useState(true);
   const [isSearchable, setIsSearchable] = useState(true);
+
+  const city = useSelector((state:RootState)=>state.filter.city)
+  const dispatch = useDispatch();
 
   // later this data will be implemented through database this is for frontend development
   const cityOptions: OptionType[] = [
@@ -84,15 +90,22 @@ const CityList = () => {
       },
     }),
   };
+  
+  const handleChange=(currentElem:any)=>{
+    dispatch(setCity(currentElem))
+  }
+
+
   return (
     <Select
       styles={customStyles}
       className={'city_select'}
-      defaultValue={cityOptions[0]}
       isClearable={isClearable}
       isSearchable={isSearchable}
       name="color"
       options={cityOptions}
+      onChange={handleChange}
+      value={city}
     />
   );
 };
