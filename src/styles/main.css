@@ -451,6 +451,7 @@ button {
   position: absolute;
   left: 15%;
   top: 50%;
+  background-color: none;
 }
 .date_select .cool_time_display p {
   font-size: 18px;

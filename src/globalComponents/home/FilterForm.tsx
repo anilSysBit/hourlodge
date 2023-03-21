@@ -9,7 +9,6 @@ import Time from "../../features/Time";
 import CityList from "../../features/CityList";
 import fakeLogo from "../../assets/fakelogo.jpeg";
 import { RootState } from "../../store";
-import { Maximize } from "@mui/icons-material";
 
 interface Props {
   event: any;
@@ -24,11 +23,14 @@ const FilterForm = () => {
   const todayDate = new Date();
   const nowDate = datetime.date;
   const maxDate = datetime.maxDate;
-  let textDate:any = nowDate?.toDateString().split(" ");
-  let newTextDate = `${textDate[1]} ${textDate[2]} ${textDate[3]}`
+  let textDate = nowDate?.toLocaleDateString('en-US',{
+    month:'short',
+    day:'numeric',
+    year:'numeric'
+  })
+
 
   const handleDateChange=(changeDate:Date)=>{
-    console.log(changeDate)
     dispatch(newDate(changeDate))
   }
 
@@ -58,7 +60,7 @@ const FilterForm = () => {
           calendarClassName="ourstay_calendar"
         />
           <div className="cool_time_display">
-          <p>{newTextDate}</p>
+          <p>{textDate}</p>
         </div>
       </div>
       <div className="filter_select">
