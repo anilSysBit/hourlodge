@@ -1,17 +1,24 @@
 import React, { useState, useRef, useEffect } from "react";
+import { useSelector,useDispatch } from "react-redux";
+import { RootState } from "../store";
+import {setSelectedTime} from '../store/slices/filterSlice'
 
-interface TimePickerProps {
-  currentTime: any;
-}
-const Time: React.FC<TimePickerProps> = ({ currentTime }) => {
+const Time: React.FC = () => {
   const [meridian, setMeridian] = useState({
     aMeri: false,
     pMeri: true,
   });
   const [activeIndex, setActiveIndex] = useState(21);
   const [displayPicker, setDisplayPicker] = useState(false);
-  const [selectedTime, setSelectedTime] = useState("21:00");
   const timeContainerRef = useRef<HTMLDivElement>(null);
+
+  const dispatch = useDispatch();
+  const storeTime = useSelector((state:RootState)=>{
+    return state.filter
+  })
+  const currentTime = storeTime.currentTime
+  const selectedTime = storeTime.selectedTime
+
   const timeArray = [
     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
     21, 22, 23,
@@ -20,11 +27,13 @@ const Time: React.FC<TimePickerProps> = ({ currentTime }) => {
 
   const handleActiveClick = (item: number) => {
     setActiveIndex(item);
+    let choosedTime="";
     if (item < 10) {
-      setSelectedTime(`0${item}:00`);
+      choosedTime=`0${item}:00`;
     } else if (item >= 10) {
-      setSelectedTime(`${item}:00`);
+      choosedTime=`${item}:00`;
     }
+    dispatch(setSelectedTime(choosedTime))
   };
 
   const handleClickOutside = (event: MouseEvent) => {
@@ -65,7 +74,7 @@ const Time: React.FC<TimePickerProps> = ({ currentTime }) => {
         className="datetime"
         min={currentTime}
         onClick={handleTimePicker}
-        onChange={() => setSelectedTime(selectedTime)}
+        onChange={(e)=>dispatch(setSelectedTime(e.target.value))}
         value={selectedTime}
       />
       <div className={`time_container`} ref={timeContainerRef}>

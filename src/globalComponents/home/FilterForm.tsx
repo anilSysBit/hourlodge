@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { useSelector,useDispatch } from "react-redux";
+import { newDate } from "../../store/slices/filterSlice";
 import { Link } from "react-router-dom";
 import DatePicker from "react-date-picker";
 import "react-date-picker/dist/DatePicker.css";
@@ -6,18 +8,29 @@ import "react-calendar/dist/Calendar.css";
 import Time from "../../features/Time";
 import CityList from "../../features/CityList";
 import fakeLogo from "../../assets/fakelogo.jpeg";
+import { RootState } from "../../store";
+import { Maximize } from "@mui/icons-material";
 
 interface Props {
   event: any;
 }
 
 const FilterForm = () => {
-  const [date, setDate] = useState(new Date());
-  let newDate = new Date();
-  let maxDate = new Date();
-  maxDate.setMonth(maxDate.getMonth() + 1);
-  let currentDate = newDate.toISOString().split("T")[0];
-  let currentTime = date.toLocaleTimeString().slice(0, 2).concat(":00");
+
+  const dispatch = useDispatch();
+  const datetime = useSelector((state:RootState)=>{
+    return state.filter
+  })
+  const todayDate = new Date();
+  const nowDate = datetime.date;
+  const maxDate = datetime.maxDate;
+  let textDate:any = nowDate?.toDateString().split(" ");
+  let newTextDate = `${textDate[1]} ${textDate[2]} ${textDate[3]}`
+
+  const handleDateChange=(changeDate:Date)=>{
+    console.log(changeDate)
+    dispatch(newDate(changeDate))
+  }
 
   return (
     <form
@@ -34,20 +47,23 @@ const FilterForm = () => {
         <h3>City</h3>
         <CityList />
       </div>
-      <div className="filter_select">
+      <div className="filter_select date_select">
         <h3>Date</h3>
         {/* <input type="date" className="datetime"  /> */}
         <DatePicker
-          onChange={setDate}
-          value={date}
-          minDate={newDate}
+          onChange={handleDateChange}
+          value={nowDate}
+          minDate={todayDate}
           maxDate={maxDate}
           calendarClassName="ourstay_calendar"
         />
+          <div className="cool_time_display">
+          <p>{newTextDate}</p>
+        </div>
       </div>
       <div className="filter_select">
         <h3>Time</h3>
-        <Time currentTime={currentTime} />
+        <Time/>
       </div>
       <div className="filter_select">
         <Link to='/explore'>

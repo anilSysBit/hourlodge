@@ -16,7 +16,6 @@ import FilterForm from "../globalComponents/home/FilterForm";
 
 const HomePage = () => {
   const scroll = useSelector((state:RootState)=>{
-    console.log(state.screen)
     return state.screen.scrollWidth
   })
   return (

@@ -95,6 +95,7 @@ button{
         flex-direction: column;
         font-weight: bold;
         // padding: 5px;
+        // border: 2px solid black;
         h3 {
             font-size: 20px;
         }
@@ -148,6 +149,7 @@ button{
     position: absolute;
     top: calc(100% + 10px);
     right: 40%;
+    width: 100%;
     z-index: 10;
     .react-calendar__tile{
         font-size: 18px;
@@ -444,10 +446,16 @@ button{
 .display_none{
     display: none;
 }
-.react-date-picker__clear-button{
-    display: none;
-}
 
+.react-date-picker__wrapper{
+    color: white;
+    .react-date-picker__clear-button{
+        display: none;
+    }
+    .react-date-picker__inputGroup__input{
+        color: white;
+    }
+}
 .adjust_global_width{
     max-width: 1920px;
 }
@@ -468,5 +476,22 @@ button{
     &:hover{
         background-color: $global;
         color: white;
+    }
+}
+
+
+.date_select{
+    position: relative;
+    user-select: none;
+    width: 200px;
+    .react-date-picker__inputGroup {
+        width: 120px;
+      }
+    .cool_time_display{
+        position: absolute;
+        left: 15%;
+        top: calc(50% );
+        p{font-size: 18px;}
+        
     }
 }

@@ -137,6 +137,7 @@ button {
   position: absolute;
   top: calc(100% + 10px);
   right: 40%;
+  width: 100%;
   z-index: 10;
 }
 .ourstay_calendar .react-calendar__tile {
@@ -403,8 +404,14 @@ button {
   display: none;
 }
 
-.react-date-picker__clear-button {
+.react-date-picker__wrapper {
+  color: white;
+}
+.react-date-picker__wrapper .react-date-picker__clear-button {
   display: none;
+}
+.react-date-picker__wrapper .react-date-picker__inputGroup__input {
+  color: white;
 }
 
 .adjust_global_width {
@@ -428,4 +435,23 @@ button {
 .price_button:hover {
   background-color: rgb(7, 146, 173);
   color: white;
+}
+
+.date_select {
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  width: 200px;
+}
+.date_select .react-date-picker__inputGroup {
+  width: 120px;
+}
+.date_select .cool_time_display {
+  position: absolute;
+  left: 15%;
+  top: 50%;
+}
+.date_select .cool_time_display p {
+  font-size: 18px;
 }/*# sourceMappingURL=main.css.map */

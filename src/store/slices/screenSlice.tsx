@@ -18,7 +18,6 @@ const screenSlice = createSlice({
     }
 })
 
-console.log(screenSlice.reducer)
 export const {setScrollWidth} = screenSlice.actions;
 
 export default screenSlice.reducer

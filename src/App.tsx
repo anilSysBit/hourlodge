@@ -8,7 +8,7 @@ import Footer from "./globalComponents/home/Footer";
 import Explore from "./pages/Explore";
 import PopopMessage from "./features/PopopMessage";
 import { setScrollWidth } from "./store/slices/screenSlice";
-
+import { newDate } from "./store/slices/filterSlice";
 
 const ScrollToTop =()=>{
   const {pathname} = useLocation();
@@ -28,13 +28,17 @@ const App=()=> {
   const handleWindowScroll =()=>{
     dispatch(setScrollWidth(window.scrollY))
   }
+
+  
   useEffect(()=>{
+
+    dispatch(newDate(new Date()));
     window.addEventListener('scroll',handleWindowScroll)
 
     return()=>{
       window.removeEventListener('scroll',handleWindowScroll)
     }
-  },[dispatch])
+  },[dispatch,newDate])
   return (
     <div className="App">
       <BrowserRouter>
