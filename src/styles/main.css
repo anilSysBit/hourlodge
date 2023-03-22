@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
 :root {
-  --global:rgb(7, 146, 173);
+  --global: rgb(7, 146, 173);
 }
 
 * {
@@ -87,20 +87,20 @@ button {
   flex-direction: column;
   font-weight: bold;
   /*#nepalcity {
-      font-family: 'Cabin', sans-serif;
-      font-size: 20px;
-      font-weight: bold;
-      width: 200px;
-      height: 50px;
-      border: 3px solid $global;
-      border-radius: 15px;
-      text-align: center;
-      overflow-y: auto;
+          font-family: 'Cabin', sans-serif;
+          font-size: 20px;
+          font-weight: bold;
+          width: 200px;
+          height: 50px;
+          border: 3px solid $global;
+          border-radius: 15px;
+          text-align: center;
+          overflow-y: auto;
 
-      &:focus {
-          outline: none;
-      } 
-  } */
+          &:focus {
+              outline: none;
+          } 
+      } */
 }
 .filter_box_container .filter_select h3 {
   font-size: 20px;
@@ -110,7 +110,8 @@ button {
   height: 50px;
   border-radius: 10px;
 }
-.filter_box_container .filter_select .datetime, .filter_box_container .filter_select .react-date-picker__wrapper {
+.filter_box_container .filter_select .datetime,
+.filter_box_container .filter_select .react-date-picker__wrapper {
   height: 50px;
   border-radius: 10px;
   font-size: 18px;
@@ -343,6 +344,10 @@ button {
   width: 300px;
   transform: translateX(130px) translateY(0px) rotateZ(39deg);
   border-radius: 15px;
+  transition: 0.3s ease;
+}
+.explore_hotel_container .database_hotels_list .hotel_view .content_box .description_box .hotel_title h2:hover {
+  text-decoration: underline;
 }
 .explore_hotel_container .database_hotels_list .hotel_view .content_box .description_box .rating_box {
   padding: 10px;
@@ -400,6 +405,100 @@ button {
        column-gap: 10px;
 }
 
+.book_hotel_container .book_hotel_internal_container .header_container {
+  margin-top: 20px;
+}
+.book_hotel_container .book_hotel_internal_container .header_container h1 {
+  font-size: 50px;
+  text-align: center;
+}
+.book_hotel_container .book_hotel_internal_container .city h2 {
+  text-align: center;
+  font-size: 25px;
+}
+.book_hotel_container .book_hotel_internal_container .city h3 {
+  text-align: center;
+  font-size: 20px;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  margin-top: 20px;
+}
+.book_hotel_container .book_hotel_internal_container .rating_box {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.book_hotel_container .book_hotel_internal_container .image_box {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  gap: 10px;
+  background-image: linear-gradient(90deg, rgb(219, 219, 219), transparent, rgb(217, 217, 217));
+}
+.book_hotel_container .book_hotel_internal_container .image_box img {
+  height: 400px;
+  width: 40%;
+  max-width: 700px;
+  border-radius: 15px;
+}
+.book_hotel_container .book_hotel_internal_container .acceptance_box {
+  padding: 10px;
+  margin-top: 10px;
+}
+.book_hotel_container .book_hotel_internal_container .acceptance_box .acceptance_internal {
+  padding: 10px;
+}
+.book_hotel_container .book_hotel_internal_container .acceptance_box .acceptance_internal h3 {
+  font-size: 20px;
+  font-weight: bold;
+}
+.book_hotel_container .book_hotel_internal_container .features_box {
+  margin-top: 80px;
+}
+.book_hotel_container .book_hotel_internal_container .features_box h2 {
+  font-size: 25px;
+  text-align: center;
+}
+.book_hotel_container .book_hotel_internal_container .features_box ul {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  place-items: center;
+  place-content: center;
+}
+.book_hotel_container .book_hotel_internal_container .features_box ul li {
+  height: 100px;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  place-items: center;
+}
+.book_hotel_container .book_hotel_internal_container .hotel_state_description .hotel_policy {
+  padding: 10px;
+}
+.book_hotel_container .book_hotel_internal_container .hotel_state_description .hotel_policy ul {
+  padding: 10px;
+  list-style: circle;
+}
+.book_hotel_container .book_hotel_internal_container .hotel_state_description .hotel_policy ul li {
+  margin: 10px;
+}
+.book_hotel_container .book_hotel_internal_container .google_map_directions {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  place-content: center;
+  place-items: center;
+}
+.book_hotel_container .book_hotel_internal_container .google_map_directions iframe {
+  border: none;
+}
+
 .display_none {
   display: none;
 }
@@ -455,4 +554,8 @@ button {
 }
 .date_select .cool_time_display p {
   font-size: 18px;
+}
+
+.mg_20 {
+  margin-top: 20px;
 }/*# sourceMappingURL=main.css.map */

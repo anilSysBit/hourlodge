@@ -2,8 +2,10 @@ import React from "react";
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 import WhatshotIcon from "@mui/icons-material/Whatshot";
 import HotelFeature from "./HotelFeature";
+import { Link,useNavigate } from "react-router-dom";
 
 const Hotels = () => {
+  const navigate = useNavigate();
   return (
     <div className="explore_hotel_container">
       <div className="database_hotels_list">
@@ -17,7 +19,7 @@ const Hotels = () => {
               <div className="content_box">
                 <div className="description_box">
                   <div className="hotel_title category">
-                    <h2>
+                    <h2 onClick={()=>navigate(`/booking/${index+1}`)}>
                       Hotel{elem} Palace{" "}
                       <span>
                         <WorkspacePremiumIcon />

@@ -1,111 +1,108 @@
-@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
 
-:root{
-    --global:rgb(7, 146, 173);
+:root {
+  --global: rgb(7, 146, 173);
 }
 
-$global:rgb(7, 146, 173);
-$hover-color:rgb(3, 56, 82);
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    // font-family: 'Fredoka One', cursive;
-    // font-family: 'Righteous', cursive;
-    font-family: 'Cabin', sans-serif;
-    // list-style: none;
-
+$global: rgb(7, 146, 173);
+$hover-color: rgb(3, 56, 82);
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  // font-family: 'Fredoka One', cursive;
+  // font-family: 'Righteous', cursive;
+  font-family: "Cabin", sans-serif;
+  // list-style: none;
 }
 
-body{
-    color: rgb(72, 72, 72);
+body {
+  color: rgb(72, 72, 72);
 }
-.App{
-    max-width: 1920px;
-    background-color: white;
-    margin: 0 auto;
-    
-}
-
-button{
-    font-weight: bold;
-    border: none;
-
-}
-.global_button{
-    height: 60px;
-    width: 200px;
-    border: none;
-    border-radius: 15px;
-    background-color: $global;
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    transition: .3s ease-in-out;
-    cursor: pointer;
-    &:hover{
-        background-color: $hover-color;
-    }
+.App {
+  max-width: 1920px;
+  background-color: white;
+  margin: 0 auto;
 }
 
-.line_button{
-    background-color: transparent;
-    height: default;
-    height: 50px;
-    border: 2px solid white;
-    border-radius: 15px;
-    padding: 10px;
-    transition: .5s ease;
-    cursor: pointer;
-    &:hover{
-        background-color: $global;
-    }
+button {
+  font-weight: bold;
+  border: none;
 }
-
-.cut_line{
-    border-color: transparent;
-    &:hover{
-        text-decoration: underline;
-        background-color: transparent;
-    }
-}
-
-.hover_color{
+.global_button {
+  height: 60px;
+  width: 200px;
+  border: none;
+  border-radius: 15px;
+  background-color: $global;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  &:hover {
     background-color: $hover-color;
-    &:hover{
-        background-color: rgb(7, 100, 146);
-    }
+  }
+}
+
+.line_button {
+  background-color: transparent;
+  height: default;
+  height: 50px;
+  border: 2px solid white;
+  border-radius: 15px;
+  padding: 10px;
+  transition: 0.5s ease;
+  cursor: pointer;
+  &:hover {
+    background-color: $global;
+  }
+}
+
+.cut_line {
+  border-color: transparent;
+  &:hover {
+    text-decoration: underline;
+    background-color: transparent;
+  }
+}
+
+.hover_color {
+  background-color: $hover-color;
+  &:hover {
+    background-color: rgb(7, 100, 146);
+  }
 }
 
 .filter_box_container {
-    // position: absolute;
+  // position: absolute;
+  display: flex;
+  place-items: center;
+  padding: 5px;
+  column-gap: 20px;
+  // border: 2px solid black;
+  // width: 100%;
+  background-color: white;
+  .filter_select {
     display: flex;
+    place-content: center;
     place-items: center;
-    padding: 5px;
-    column-gap: 20px;
+    flex-direction: column;
+    font-weight: bold;
+    // padding: 5px;
     // border: 2px solid black;
-    // width: 100%;
-    background-color: white;
-    .filter_select {
-        display: flex;
-        place-content: center;
-        place-items: center;
-        flex-direction: column;
-        font-weight: bold;
-        // padding: 5px;
-        // border: 2px solid black;
-        h3 {
-            font-size: 20px;
-        }
-        .filter_button{
-            width: 120px;
-            height: 50px;
-            border-radius: 10px;
-        }
+    h3 {
+      font-size: 20px;
+    }
+    .filter_button {
+      width: 120px;
+      height: 50px;
+      border-radius: 10px;
+    }
 
-        /*#nepalcity {
+    /*#nepalcity {
             font-family: 'Cabin', sans-serif;
             font-size: 20px;
             font-weight: bold;
@@ -120,379 +117,500 @@ button{
                 outline: none;
             } 
         } */
-        .datetime,.react-date-picker__wrapper {
-            height: 50px;
-            // border: 3px solid $image-fade;
-            border-radius: 10px;
-            font-size: 18px;
-            width: 100%;
-            font-weight:bold;
-            border: 2px solid $global;
-            text-align: center;
-        }
-        img{
-            max-height: 100px;
-            max-width: 200px;
-            position: absolute;
-            left:10px;
-        }
-        .filter_login_signup{
-            position: absolute;
-            right: 20px;
-        }
+    .datetime,
+    .react-date-picker__wrapper {
+      height: 50px;
+      // border: 3px solid $image-fade;
+      border-radius: 10px;
+      font-size: 18px;
+      width: 100%;
+      font-weight: bold;
+      border: 2px solid $global;
+      text-align: center;
     }
+    img {
+      max-height: 100px;
+      max-width: 200px;
+      position: absolute;
+      left: 10px;
+    }
+    .filter_login_signup {
+      position: absolute;
+      right: 20px;
+    }
+  }
 }
-.ourstay_calendar{
-    font-size: 1.4em;
-    border-radius: 15px;
-    padding:10px;
-    position: absolute;
-    top: calc(100% + 10px);
-    right: 40%;
-    width: 100%;
-    z-index: 10;
-    .react-calendar__tile{
-        font-size: 18px;
+.ourstay_calendar {
+  font-size: 1.4em;
+  border-radius: 15px;
+  padding: 10px;
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 40%;
+  width: 100%;
+  z-index: 10;
+  .react-calendar__tile {
+    font-size: 18px;
+  }
+  .react-calendar__navigation__label {
+    font-size: 18px;
+    background-color: $global;
+    color: white;
+    border-radius: 10px;
 
+    &:hover {
+      color: black;
     }
-    .react-calendar__navigation__label{
-        font-size: 18px;
+  }
+  .react-calendar__navigation__arrow {
+    font-size: 25px;
+  }
+  .react-calendar__tile--active {
+    background-color: $global;
+  }
+}
+
+.time_container {
+  position: absolute;
+  // border: 5px solid black;
+  height: 310px;
+  max-width: 500px;
+  width: 300px;
+  background-color: white;
+  box-shadow: 2px 2px 15px rgb(168, 167, 167);
+  border-radius: 10px;
+  padding: 10px;
+  z-index: 999;
+  top: calc(100% + 5px);
+  .internal_time_container {
+    .am_pm_container {
+      width: 100%;
+      height: 20%;
+      // border: 2px solid green;
+      display: flex;
+      place-content: center;
+      place-items: center;
+
+      .time_button {
+        height: 50px;
+        width: 100px;
+        font-size: 15px;
+        // border: 2px solid black;
+        cursor: pointer;
+      }
+      .am_button {
+        border-radius: 10px 0px 0px 10px;
+      }
+      .pm_button {
+        border-radius: 0px 10px 10px 0px;
+      }
+      .am_pm_active {
         background-color: $global;
         color: white;
-        border-radius: 10px;
-
-        &:hover{
-            color: black;
-        }
+      }
     }
-    .react-calendar__navigation__arrow{
-        font-size: 25px;
-    }
-    .react-calendar__tile--active{
-        background-color: $global;
-    }
-}
+    .time_tabulation_container {
+      height: 80%;
+      .time_internal_tabulation_container {
+        height: 50%;
+        .time_data_tabulation {
+          display: grid;
+          grid-template-columns: auto auto auto;
+          row-gap: 20px;
+          column-gap: 10px;
 
-.time_container{
-    position: absolute;
-    // border: 5px solid black;
-    height: 310px;
-    max-width: 500px;
-    width: 300px;
-    background-color: white;
-    box-shadow: 2px 2px 15px rgb(168, 167, 167);
-    border-radius: 10px;
-    padding: 10px;
-    z-index:999;
-    top: calc(100% + 5px);
-    .internal_time_container{
-
-        .am_pm_container{
-            width: 100%;
-            height: 20%;
-            // border: 2px solid green;
+          padding: 10px;
+          .time_box {
+            height: 40px;
+            width: 70px;
+            background-color: rgb(230, 229, 229);
             display: flex;
             place-content: center;
             place-items: center;
-
-            .time_button{
-                height: 50px;
-                width: 100px;
-                font-size: 15px;
-                // border: 2px solid black;
-                cursor: pointer;
+            border-radius: 10px;
+            cursor: pointer;
+            &:hover {
+              background-color: rgb(213, 206, 206);
             }
-            .am_button{
-                border-radius: 10px 0px 0px 10px;
+          }
+          .time_box_am {
+            display: none;
+          }
+          .time_box_pm {
+            display: none;
+          }
+          .time_box_active {
+            background-color: $global;
+            color: white;
+            &:hover {
+              color: black;
             }
-            .pm_button{
-                border-radius: 0px 10px 10px 0px;
-            }
-            .am_pm_active{
-                background-color: $global;
-                color: white;
-            }
+          }
+          .time_box_inactive {
+            text-decoration: line-through;
+          }
         }
-        .time_tabulation_container{
-            height: 80%;
-            .time_internal_tabulation_container{
-                height: 50%;
-                .time_data_tabulation{
-                    display:grid;
-                    grid-template-columns: auto auto auto;
-                    row-gap: 20px;
-                    column-gap: 10px;
-
-                    padding: 10px;
-                    .time_box{
-                        height: 40px;
-                        width: 70px;
-                        background-color: rgb(230, 229, 229);
-                        display: flex;
-                        place-content: center;
-                        place-items: center;
-                        border-radius: 10px;
-                        cursor: pointer;
-                        &:hover{
-                            background-color: rgb(213, 206, 206);
-                        }
-                        
-                    }
-                    .time_box_am{
-                        display: none;
-                    }
-                    .time_box_pm{
-                        display: none;
-                    }
-                    .time_box_active{
-                        background-color: $global;
-                        color: white;
-                        &:hover{
-                            color: black;
-                        }
-                    }
-                    .time_box_inactive{
-                        text-decoration:line-through;
-                    }
-                }
-            }
-        }
-
+      }
     }
+  }
 }
 
-.explore_main_container{
-    position: relative;
-    width: 100%;
-    .explore_navigation_container{
-        display: flex;
-        place-content: center;
-        background-image: linear-gradient(90deg,$global,white);
-        position: sticky;
-        top: 0;
-        height: 100px;
-        place-items: center;
-        z-index: 10;
-        // border: 5px solid black;
-        .filter_box_container{
-            border-radius: 10px;
-            padding: -2px;
-            width: 50%;
-            font-size: 15px;
-            .filter_select{
-                h3{font-size: 15px;}
-            }
+.explore_main_container {
+  position: relative;
+  width: 100%;
+  .explore_navigation_container {
+    display: flex;
+    place-content: center;
+    background-image: linear-gradient(90deg, $global, white);
+    position: sticky;
+    top: 0;
+    height: 100px;
+    place-items: center;
+    z-index: 10;
+    // border: 5px solid black;
+    .filter_box_container {
+      border-radius: 10px;
+      padding: -2px;
+      width: 50%;
+      font-size: 15px;
+      .filter_select {
+        h3 {
+          font-size: 15px;
         }
+      }
     }
-    .explore_filter_container{
-        width: 25%;
-        height: 100vh;
-        float: right;
-        position: sticky;
-        top: 100px;
-    }
-    .explore_body_container{
-        width: 75%;
-        display: flex;
-        flex-direction: row-reverse;
-    }
+  }
+  .explore_filter_container {
+    width: 25%;
+    height: 100vh;
+    float: right;
+    position: sticky;
+    top: 100px;
+  }
+  .explore_body_container {
+    width: 75%;
+    display: flex;
+    flex-direction: row-reverse;
+  }
 }
 
 // Hotels.tsx Css explore_hotel_container
 
-.explore_hotel_container{
-    // border: 3px solid green;
-    width: 100%;
-    margin-top: 20px;
-    .database_hotels_list{
-        padding: 20px;
+.explore_hotel_container {
+  // border: 3px solid green;
+  width: 100%;
+  margin-top: 20px;
+  .database_hotels_list {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    place-content: center;
+    row-gap: 30px;
+    overflow: hidden;
+    .hotel_view {
+      height: 450px;
+      // border: 3px solid $global;
+      width: 90%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-around;
+      box-shadow: 2px 2px 15px rgb(184, 184, 184);
+      transition: 0.2s ease;
+      overflow: hidden;
+      &:hover {
+        outline: 4px solid $global;
+      }
+      .img_box {
+        // border: 2px solid red;
+        width: 40%;
+        cursor: pointer;
+        img {
+          height: 100%;
+          width: 100%;
+          border-radius: 10px;
+        }
+        overflow: hidden;
+      }
+      .content_box {
+        width: 50%;
+        // border: 2px solid blue;
+        display: flex;
+        flex-direction: column;
+        place-items: center;
+        .description_box {
+          position: relative;
+          // border: 2px solid red;
+          width: 100%;
+          height: 85%;
+          .hotel_title {
+            width: 100%;
+            padding: 10px;
+            h2 {
+              cursor: pointer;
+              span {
+                position: absolute;
+                font-size: 15px;
+                padding: 10px;
+                display: flex;
+                place-items: center;
+                place-content: center;
+                background-image: linear-gradient(90deg, purple, $global);
+                color: white;
+                top: 0;
+                right: 0;
+                width: 300px;
+                transform: translateX(130px) translateY(0px) rotateZ(39deg);
+                border-radius: 15px;
+                transition: .3s ease;
+              }
+              &:hover{
+                text-decoration: underline;
+              }
+            }
+          }
+          .rating_box {
+            padding: 10px;
+          }
+          .location_box {
+            padding: 10px;
+            p {
+              display: flex;
+              place-items: center;
+            }
+          }
+          .allowence_feature {
+            padding: 10px;
+            ul {
+              list-style: none;
+              display: flex;
+              li {
+                display: flex;
+                justify-content: space-between;
+                place-items: center;
+                margin: 5px;
+              }
+            }
+          }
+          .room_service {
+            padding: 10px;
+            ul {
+              list-style: none;
+              display: flex;
+              column-gap: 10px;
+              li {
+              }
+            }
+          }
+        }
+        .discount_liner {
+          width: 100%;
+          background-image: linear-gradient(
+            90deg,
+            rgb(213, 239, 249),
+            rgb(188, 248, 252)
+          );
+          height: 40px;
+          display: flex;
+          place-content: center;
+          place-items: center;
+          border-radius: 10px;
+          padding: 10px;
+          margin-bottom: 20px;
+          p {
+            text-decoration: underline;
+            cursor: pointer;
+          }
+        }
+        .pricing_box {
+          // border: 2px solid red;
+          width: 100%;
+          height: 15%;
+          display: flex;
+          justify-content: space-between;
+          column-gap: 10px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+// hotel
+
+.book_hotel_container{
+  .book_hotel_internal_container{
+    .header_container{
+      margin-top: 20px;
+      h1{
+        font-size: 50px;
+        text-align: center;
+      }
+    }
+    .city{
+      h2{
+        text-align: center;
+        font-size: 25px;
+      }
+      h3{
+        text-align: center;
+        font-size: 20px;
+        display: flex;
+        place-content: center;
+        place-items: center;
+        margin-top: 20px;
+      }
+    }
+    .rating_box{
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .image_box{
+      padding: 10px;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      // place-content: center;
+      display: flex;
+      place-content: center;
+      place-items: center;
+      gap: 10px;
+      background-image: linear-gradient(90deg,rgb(219, 219, 219),transparent,rgb(217, 217, 217));
+      img{
+        height: 400px;
+        width: 40%;
+        max-width: 700px;
+        border-radius: 15px;
+      }
+    }
+    .acceptance_box{
+      // border: 5px solid black;
+      padding: 10px;
+      margin-top: 10px;
+      .acceptance_internal{
+        padding: 10px;
+        h3{
+          font-size: 20px;
+          font-weight: bold;
+        }
+        p{}
+      }
+    }
+    .features_box{
+      margin-top: 80px;
+      h2{
+        font-size: 25px;
+        text-align: center;
+      }
+      ul{
+        margin-top: 20px;
         display: flex;
         flex-wrap: wrap;
+        place-items: center;
         place-content: center;
-        row-gap: 30px;
-        overflow: hidden;
-        .hotel_view{
-            height: 450px;
-            // border: 3px solid $global;
-            width: 90%;
-            padding: 10px;
-            margin-top: 10px;
-            border-radius: 10px;
-            display: flex;
-            justify-content: space-around;
-            box-shadow: 2px 2px 15px rgb(184, 184, 184);
-            transition: .2s ease;
-            overflow: hidden;
-            &:hover{
-                outline: 4px solid $global;
-            }
-            .img_box{
-                // border: 2px solid red;
-                width: 40%;
-                cursor: pointer;
-                img{
-                    height: 100%;
-                    width: 100%;
-                    border-radius: 10px;
-                }
-                overflow: hidden;
-            }
-            .content_box{
-                width: 50%;
-                // border: 2px solid blue;
-                display: flex;
-                flex-direction: column;
-                place-items: center;
-                .description_box{
-                    position: relative;
-                    // border: 2px solid red;
-                    width: 100%;
-                    height: 85%;                            .hotel_title{
-                        width: 100%;
-                        padding: 10px;
-                        h2{
-                            cursor: pointer;
-                            span{
-                                position: absolute;
-                                font-size: 15px;
-                                padding: 10px;
-                                display: flex;
-                                place-items: center;
-                                place-content: center;
-                                background-image: linear-gradient(90deg,purple,$global);
-                                color: white;
-                                top: 0;
-                                right: 0;
-                                width: 300px;
-                                transform: translateX(130px) translateY(0px) rotateZ(39deg);
-                                border-radius: 15px;
-                            }
-                        }
-                    }
-                    .rating_box{
-                        padding: 10px;
-                    }
-                    .location_box{
-                        padding: 10px;
-                        p{
-                            display: flex;
-                            place-items: center;
-                        }
-                    }
-                    .allowence_feature{
-                        padding: 10px;
-                        ul{
-                            list-style: none;
-                            display: flex;
-                            li{
-                                display: flex;
-                                justify-content: space-between;
-                                place-items: center;
-                                margin: 5px;
-                            }
-                        }
-                    }
-                    .room_service{
-                        padding: 10px;
-                        ul{
-                            list-style: none;
-                            display: flex;
-                            column-gap: 10px;
-                            li{
-                            }
-                        }
-                    }
-                }
-                .discount_liner{
-                    width: 100%;
-                    background-image: linear-gradient(90deg,rgb(213, 239, 249),rgb(188, 248, 252));
-                    height: 40px;
-                    display: flex;
-                    place-content: center;
-                    place-items: center;
-                    border-radius: 10px;
-                    padding: 10px;
-                    margin-bottom: 20px;
-                    p{
-                        text-decoration: underline;
-                        cursor: pointer;
-                    }
-                }
-                .pricing_box{
-                    // border: 2px solid red;
-                    width: 100%;
-                    height: 15%;
-                    display: flex;
-                    justify-content: space-between;
-                    column-gap: 10px;
-                    
-                }
-            }
+
+        li{
+          height: 100px;
+          width: 150px;
+          display: flex;
+          flex-direction: column;
+          place-content: center;
+          place-items:center;
         }
+      }
     }
+    .hotel_state_description{
+      .hotel_policy{
+        padding: 10px;
+        ul{
+          padding: 10px;
+          list-style:circle;
+          li{
+            margin: 10px;
+          }
+        }
+      }
+    }
+    .google_map_directions{
+      width: 100%;
+      height: 300px;
+      // border: 2px solid black;
+      display: flex;
+      place-content: center;
+      place-items: center;
+      iframe{
+        border: none;
+      }
+    }
+  }
 }
+
 
 
 
 // Smart Filter Container
 
-
-
-
-
-
 // small features
 
-.display_none{
+.display_none {
+  display: none;
+}
+
+.react-date-picker__wrapper {
+  color: white;
+  .react-date-picker__clear-button {
     display: none;
-}
-
-.react-date-picker__wrapper{
+  }
+  .react-date-picker__inputGroup__input {
     color: white;
-    .react-date-picker__clear-button{
-        display: none;
-    }
-    .react-date-picker__inputGroup__input{
-        color: white;
-    }
+  }
 }
-.adjust_global_width{
-    max-width: 1920px;
+
+.adjust_global_width {
+  max-width: 1920px;
 }
-.price_button{
-    height: 50px;
+.price_button {
+  height: 50px;
+  width: 120px;
+  background-color: rgb(240, 234, 234);
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 2px 2px 10px rgb(158, 156, 156);
+  font-size: 18px;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+  span {
+    font-size: 15px;
+  }
+
+  &:hover {
+    background-color: $global;
+    color: white;
+  }
+}
+
+.date_select {
+  position: relative;
+  user-select: none;
+  width: 200px;
+  .react-date-picker__inputGroup {
     width: 120px;
-    background-color: rgb(240, 234, 234);
-    border-radius: 10px;
-    padding: 5px;
-    box-shadow: 2px 2px 10px rgb(158, 156, 156);
-    font-size: 18px;
-    transition: .2s ease-in-out;
-    cursor: pointer;
-    span{
-        font-size: 15px;
+  }
+  .cool_time_display {
+    position: absolute;
+    left: 15%;
+    top: calc(50%);
+    background-color: none;
+    p {
+      font-size: 18px;
     }
-
-    &:hover{
-        background-color: $global;
-        color: white;
-    }
+  }
 }
 
-
-.date_select{
-    position: relative;
-    user-select: none;
-    width: 200px;
-    .react-date-picker__inputGroup {
-        width: 120px;
-      }
-    .cool_time_display{
-        position: absolute;
-        left: 15%;
-        top: calc(50% );
-        background-color: none;
-        p{font-size: 18px;}
-        
-    }
+.mg_20{
+  margin-top: 20px;
 }
