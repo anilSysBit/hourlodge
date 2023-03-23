@@ -740,14 +740,12 @@ $booking_background:linear-gradient(90deg,purple,$global);
           box-shadow: 2px 2px 10px gray;
           background-color: $hover-color;
           color: white;
-          z-index: 10;
         }
       }
       .price_active{
         box-shadow: 2px 2px 10px gray;
         background-color: $global;
         color: white;
-        z-index: 10;
       }
     }
     .guests_rooms_data{

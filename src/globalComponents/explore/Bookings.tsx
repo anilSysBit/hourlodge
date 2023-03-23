@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { SaveAs } from "@mui/icons-material";
+import { RoomService, SaveAs } from "@mui/icons-material";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
 import Time from "../../features/Time";
@@ -25,30 +25,35 @@ const Bookings = () => {
 
   const guestMapData = [
     {
-      title: "guests",
-      value: roomData.guests,
+      title: "rooms",
+      value: roomData.rooms,
+      iso:0,
     },
     {
       title: "adults",
       value: roomData.adults,
+      iso:1,
 
     },
     {
       title: "children",
       value: roomData.children,
-
+      iso:2
     },
   ];
+
   const total_price = price * roomData.rooms;
   const scroll = useSelector((state: RootState) => {
     return state.screen.scrollWidth;
   });
   const handleBookingBox = () => {
-    if (scroll < 900) {
+    if (scroll < 790) {
       window.scrollTo({
         top: 800,
         behavior: "smooth",
       });
+    }else{
+      setShowBook(!showBook)
     }
   };
 
@@ -56,21 +61,82 @@ const Bookings = () => {
     setPrice(price);
   };
 
-  console.log(price);
-  useEffect(() => {
-    if (scroll >= 790) {
-      setShowBook(true);
-    } else if (scroll < 790) {
-      setShowBook(false);
+  const  handleEditClick =(num:number,iso:number)=>{
+    if(iso == 0){
+      setRoomData((prev)=>{
+        return{
+          ...prev,
+          rooms:num && prev.rooms > 0 ? prev.rooms +1 : prev.rooms < 0 ? prev.rooms - 1 :prev.rooms
+        }
+      })
+    }else if(iso == 1){
+      setRoomData((prev)=>{
+        return{
+          ...prev,
+          adults:num && prev.adults <8 ? prev.adults +1 : prev.adults >1 ? prev.adults - 1 : prev.adults
+        }
+      })
+    } else if(iso == 2){
+      setRoomData((prev)=>{
+        return{
+          ...prev,
+          children:num && prev.children < 4 ? prev.children +1 : prev.children >0?prev.children - 1:prev.children
+        }
+      })
     }
-  }, [scroll]);
+  }
+
+  const makeRooms=(data:number)=>{
+    let count = 0;
+    for(let i = data; i >0; i-=2){
+      count++;
+    }
+    return count;
+  }
+  const makeRoomPerAdults =()=>{
+    if(roomData.adults < 2){
+      setRoomData((prev)=>{
+        return{
+          ...prev,
+          guests:1,
+          rooms:1
+        }
+      })
+    }else if(roomData.adults >2){
+      setRoomData((prev)=>{
+        return{
+          ...prev,
+          rooms: makeRooms(prev.adults % 2 == 0 ? roomData.adults :roomData.adults + 1),
+          guests:prev.adults
+        }
+      })
+    }else if(roomData.adults == 2){
+      setRoomData((prev)=>{
+        return{
+          ...prev,
+          guests:2,
+          rooms: prev.rooms > 2 ? 2 :prev.rooms
+        }
+      })
+    }
+  }
+
+  useEffect(() => {
+    if(scroll < 790){
+      setShowBook(false);
+    } else if(scroll > 790){
+      setShowBook(true);
+    }
+
+  makeRoomPerAdults();
+  }, [scroll,roomData]);
   return (
     <>
       <div className="booking_box_container">
         <style>{`
-            .booking_box_container{
-                display:${scroll > 2100 ? "none" : "block"};
-            }
+          .booking_box_container{
+            z-index:10;
+          }
         `}</style>
         <div
           className={`booking_all_container ${showBook ? "box_active" : ""}`}
@@ -151,11 +217,11 @@ const Bookings = () => {
                         <div className="data_contents">
                           <p className="title">{elem.title}</p>
                           <span>
-                            <button>
+                            <button onClick={()=>handleEditClick(1,elem.iso)}>
                               +
                             </button>
                             <p className="value">{elem.value}</p>
-                            <button>
+                            <button onClick={()=>handleEditClick(0,elem.iso)}>
                               -
                             </button>
                           </span>

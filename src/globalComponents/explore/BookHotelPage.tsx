@@ -17,7 +17,7 @@ import {
   LocationOn,
   CurrencyExchange,
   AssignmentInd,
-  Group
+  Group,
 } from "@mui/icons-material";
 
 const BookHotelPage = () => {
@@ -90,7 +90,6 @@ const BookHotelPage = () => {
       <div className="explore_navigation_container adjust_global_width">
         <FilterForm />
       </div>
-      <Bookings />
       <div className="book_hotel_internal_container">
         <div className="hotel_profile_main">
           <div className="hotel_title_manager">
@@ -121,127 +120,135 @@ const BookHotelPage = () => {
           <img src={imgSrc.bathroom} alt="" />
           <img src={imgSrc.swimming} alt="" />
         </div>
-        <div className="acceptance_box">
-          <div className="couple acceptance_internal">
-            <h3>
-              <Group />
-              Couple Accepted
-            </h3>
-            <p>
-              Any Married and Unmarried Couple are accepted and You gurantee to
-              provide with your security.
-            </p>
+        <div className="seperate_book_info_container">
+          <div className="seperate_info_box">
+            <div className="acceptance_box">
+              <div className="couple acceptance_internal">
+                <h3>
+                  <Group />
+                  Couple Accepted
+                </h3>
+                <p>
+                  Any Married and Unmarried Couple are accepted and You gurantee
+                  to provide with your security.
+                </p>
+              </div>
+              <div className="payment_system acceptance_internal">
+                <h3>
+                  <CurrencyExchange />
+                  Only Online Payment
+                </h3>
+                <p>
+                  Should Pay With Online Serivce esewa, mobile Banking , Esewa,
+                  Ime Pay
+                </p>
+              </div>
+              <div className="goverment_id acceptance_internal">
+                <h3>
+                  <AssignmentInd />
+                  Any Goverment Adult Id Accepted
+                </h3>
+                <p>Liscence, Citizenship, Passport, Identity</p>
+              </div>
+            </div>
+            <div className="features_box">
+              <h2>Our Service</h2>
+              <ul>
+                <li>
+                  <LocalParking /> Parking
+                </li>
+                <li>
+                  <Fastfood /> Food and Snacks
+                </li>
+                <li>
+                  <Tv /> TV Serive
+                </li>
+                <li>
+                  <WindPower /> Fan
+                </li>
+                <li>
+                  <Wifi /> Fast Wifi
+                </li>
+                <li>
+                  <Kitchen /> Freezer
+                </li>
+                <li>
+                  <CellTower /> Mobile Network
+                </li>
+                <li>
+                  <Pool /> Swimming Pool
+                </li>
+                <li>AC</li>
+                <li>Geyser</li>
+                <li>CCTV</li>
+                <li>Room Service</li>
+              </ul>
+            </div>
+            <div className="ads_container"></div>
+            <div className="google_map_directions">
+              <h1>Get Direction Through Google Map</h1>
+              <iframe
+                src={googleIframeLink}
+                width="100%"
+                height="450"
+                loading="lazy"
+              ></iframe>
+            </div>
+            <div className="ads_container"></div>
+            <div className="hotel_state_description">
+              <div className="policy_details hotel_policy">
+                <h1>Lodge Policy</h1>
+                <ul>
+                  <li>
+                    Identification requirement: Guests must provide a valid
+                    government-issued photo identification, such as a passport
+                    or driver's license, at check-in. Photocopies or digital
+                    copies of identification documents are not accepted.
+                  </li>
+                  <li>
+                    Age requirement: To check in to our hotel, guests must be at
+                    least 18 years old and provide a valid form of
+                    identification confirming their age.
+                  </li>
+                  <li>
+                    No smoking policy: Smoking is strictly prohibited in all
+                    areas of the hotel, including guest rooms, common areas, and
+                    outdoor spaces. Violators may be fined and evicted from the
+                    hotel.
+                  </li>
+                  <li>
+                    Noise policy: Guests are expected to keep noise levels to a
+                    minimum at all times, particularly between the hours of 10pm
+                    to 7am. Disruptive guests may be asked to leave the hotel
+                    without refund.
+                  </li>
+                  <li>
+                    Payment policy: Guests must provide a valid credit or debit
+                    card at check-in to cover any incidental charges or damages.
+                    Cash payments are accepted, but a valid credit card must
+                    still be provided for incidentals.
+                  </li>
+                </ul>
+              </div>
+              <div className="cancel_order_policy hotel_policy">
+                <h1>Refund and Cancellation</h1>
+                <ul>
+                  <li>
+                    Cancellation policy: Guests must cancel their reservation
+                    within a specified time frame to avoid being charged for the
+                    first night's stay. The time frame varies depending on the
+                    room type and rate selected.
+                  </li>
+                  <li>
+                    Advance notice: Guests must provide at least 24 hours'
+                    advance notice of cancellation to avoid a cancellation fee.
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div className="payment_system acceptance_internal">
-            <h3>
-              <CurrencyExchange />
-              Only Online Payment
-            </h3>
-            <p>
-              Should Pay With Online Serivce esewa, mobile Banking , Esewa, Ime
-              Pay
-            </p>
-          </div>
-          <div className="goverment_id acceptance_internal">
-            <h3>
-              <AssignmentInd />
-              Any Goverment Adult Id Accepted
-            </h3>
-            <p>Liscence, Citizenship, Passport, Identity</p>
-          </div>
-        </div>
-        <div className="features_box">
-          <h2>Our Service</h2>
-          <ul>
-            <li>
-              <LocalParking /> Parking
-            </li>
-            <li>
-              <Fastfood /> Food and Snacks
-            </li>
-            <li>
-              <Tv /> TV Serive
-            </li>
-            <li>
-              <WindPower /> Fan
-            </li>
-            <li>
-              <Wifi /> Fast Wifi
-            </li>
-            <li>
-              <Kitchen /> Freezer
-            </li>
-            <li>
-              <CellTower /> Mobile Network
-            </li>
-            <li>
-              <Pool /> Swimming Pool
-            </li>
-            <li>AC</li>
-            <li>Geyser</li>
-            <li>CCTV</li>
-            <li>Room Service</li>
-          </ul>
-        </div>
-        <div className="ads_container"></div>
-        <div className="google_map_directions">
-          <h1>Get Direction Through Google Map</h1>
-          <iframe
-            src={googleIframeLink}
-            width="100%"
-            height="450"
-            loading="lazy"
-          ></iframe>
-        </div>
-        <div className="ads_container"></div>
-        <div className="hotel_state_description">
-          <div className="policy_details hotel_policy">
-            <h1>Lodge Policy</h1>
-            <ul>
-              <li>
-                Identification requirement: Guests must provide a valid
-                government-issued photo identification, such as a passport or
-                driver's license, at check-in. Photocopies or digital copies of
-                identification documents are not accepted.
-              </li>
-              <li>
-                Age requirement: To check in to our hotel, guests must be at
-                least 18 years old and provide a valid form of identification
-                confirming their age.
-              </li>
-              <li>
-                No smoking policy: Smoking is strictly prohibited in all areas
-                of the hotel, including guest rooms, common areas, and outdoor
-                spaces. Violators may be fined and evicted from the hotel.
-              </li>
-              <li>
-                Noise policy: Guests are expected to keep noise levels to a
-                minimum at all times, particularly between the hours of 10pm to
-                7am. Disruptive guests may be asked to leave the hotel without
-                refund.
-              </li>
-              <li>
-                Payment policy: Guests must provide a valid credit or debit card
-                at check-in to cover any incidental charges or damages. Cash
-                payments are accepted, but a valid credit card must still be
-                provided for incidentals.
-              </li>
-            </ul>
-          </div>
-          <div className="cancel_order_policy hotel_policy">
-            <h1>Refund and Cancellation</h1>
-            <ul>
-              <li>
-                Cancellation policy: Guests must cancel their reservation within
-                a specified time frame to avoid being charged for the first
-                night's stay. The time frame varies depending on the room type
-                and rate selected.
-              </li>
-              <li>
-                Advance notice: Guests must provide at least 24 hours' advance
-                notice of cancellation to avoid a cancellation fee.
-              </li>
-            </ul>
+          <div className="seperate_booking_box">
+          <Bookings />
           </div>
         </div>
       </div>
