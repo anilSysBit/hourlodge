@@ -455,6 +455,7 @@ $mobile_cover: rgb(220, 247, 249);
     place-content: center;
     place-items: center;
     flex-direction: column;
+    z-index: 999;
 
     .copyright_text{
         text-align: center;

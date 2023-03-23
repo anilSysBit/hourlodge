@@ -1,39 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { useSelector,useDispatch } from "react-redux";
-import { newDate } from "../../store/slices/filterSlice";
 import { Link } from "react-router-dom";
-import DatePicker from "react-date-picker";
 import "react-date-picker/dist/DatePicker.css";
 import "react-calendar/dist/Calendar.css";
 import Time from "../../features/Time";
 import CityList from "../../features/CityList";
 import fakeLogo from "../../assets/fakelogo.jpeg";
-import { RootState } from "../../store";
+import MyDatePicker from "../../features/MyDatePicker";
 
 interface Props {
   event: any;
 }
 
 const FilterForm = () => {
-
-  const dispatch = useDispatch();
-  const datetime = useSelector((state:RootState)=>{
-    return state.filter
-  })
-  const todayDate = new Date();
-  const nowDate = datetime.date;
-  const maxDate = datetime.maxDate;
-  let textDate = nowDate?.toLocaleDateString('en-US',{
-    month:'short',
-    day:'numeric',
-    year:'numeric'
-  })
-
-
-  const handleDateChange=(changeDate:Date)=>{
-    dispatch(newDate(changeDate))
-  }
-
   return (
     <form
       className="filter_box_container"
@@ -49,24 +27,8 @@ const FilterForm = () => {
         <h3>City</h3>
         <CityList />
       </div>
-      <div className="filter_select date_select">
-        <h3>Date</h3>
-        {/* <input type="date" className="datetime"  /> */}
-        <DatePicker
-          onChange={handleDateChange}
-          value={nowDate}
-          minDate={todayDate}
-          maxDate={maxDate}
-          calendarClassName="ourstay_calendar"
-        />
-          <div className="cool_time_display">
-          <p>{textDate}</p>
-        </div>
-      </div>
-      <div className="filter_select">
-        <h3>Time</h3>
-        <Time/>
-      </div>
+      <MyDatePicker />
+      <Time />
       <div className="filter_select">
         <Link to='/explore'>
         <button type="submit" className="global_button filter_button">

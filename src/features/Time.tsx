@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
-import { useSelector,useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../store";
-import {setSelectedTime} from '../store/slices/filterSlice'
+import { setSelectedTime } from "../store/slices/filterSlice";
 
 const Time: React.FC = () => {
   const [meridian, setMeridian] = useState({
@@ -13,11 +13,11 @@ const Time: React.FC = () => {
   const timeContainerRef = useRef<HTMLDivElement>(null);
 
   const dispatch = useDispatch();
-  const storeTime = useSelector((state:RootState)=>{
-    return state.filter
-  })
-  const currentTime = storeTime.currentTime
-  const selectedTime = storeTime.selectedTime
+  const storeTime = useSelector((state: RootState) => {
+    return state.filter;
+  });
+  const currentTime = storeTime.currentTime;
+  const selectedTime = storeTime.selectedTime;
 
   const timeArray = [
     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
@@ -27,13 +27,13 @@ const Time: React.FC = () => {
 
   const handleActiveClick = (item: number) => {
     setActiveIndex(item);
-    let choosedTime="";
+    let choosedTime = "";
     if (item < 10) {
-      choosedTime=`0${item}:00`;
+      choosedTime = `0${item}:00`;
     } else if (item >= 10) {
-      choosedTime=`${item}:00`;
+      choosedTime = `${item}:00`;
     }
-    dispatch(setSelectedTime(choosedTime))
+    dispatch(setSelectedTime(choosedTime));
   };
 
   const handleClickOutside = (event: MouseEvent) => {
@@ -69,65 +69,68 @@ const Time: React.FC = () => {
 
   return (
     <>
-      <input
-        type="time"
-        className="datetime"
-        min={currentTime}
-        onClick={handleTimePicker}
-        onChange={(e)=>dispatch(setSelectedTime(e.target.value))}
-        value={selectedTime}
-      />
-      <div className={`time_container`} ref={timeContainerRef}>
-        <style>{`
+      <div className="filter_select time_select">
+        <h3>Time</h3>
+        <input
+          type="time"
+          className="datetime"
+          min={currentTime}
+          onClick={handleTimePicker}
+          onChange={(e) => dispatch(setSelectedTime(e.target.value))}
+          value={selectedTime}
+        />
+        <div className={`time_container`} ref={timeContainerRef}>
+          <style>{`
         .time_container{
           display:${displayPicker ? "block" : "none"};
         }
       `}</style>
-        <div className="internal_time_container">
-          <div className="am_pm_container">
-            <button
-              className={`time_button am_button ${
-                meridian.aMeri ? "am_pm_active" : null
-              }`}
-              onClick={(e): void => handleAmPm(e, "am")}
-            >
-              AM
-            </button>
-            <button
-              className={`time_button pm_button ${
-                meridian.pMeri ? "am_pm_active" : null
-              }`}
-              onClick={(e): void => handleAmPm(e, "pm")}
-            >
-              PM
-            </button>
-          </div>
-          <div className="time_tabulation_container">
-            <div className="time_internal_tabulation_container">
-              <div className="time_data_tabulation">
-                {timeArray.map((elem, index) => {
-                  return (
-                    <div
-                      className={`time_box ${
-                        !meridian.aMeri && index < 12 ? "time_box_am" : ""
-                      } ${
-                        !meridian.pMeri && index >= 12 ? "time_box_pm" : ""
-                      } time_box${index} ${
-                        index == activeIndex ? "time_box_active" : ""
-                      }`}
-                      key={index}
-                      onClick={() => {
-                        handleActiveClick(index);
-                        setDisplayPicker(false);
-                      }}
-                    >
-                      <p>
-                        {elem > 12 ? elem - 12 : elem}
-                        :00
-                      </p>
-                    </div>
-                  );
-                })}
+          <div className="internal_time_container">
+            <div className="am_pm_container">
+              <button
+                className={`time_button am_button ${
+                  meridian.aMeri ? "am_pm_active" : null
+                }`}
+                onClick={(e): void => handleAmPm(e, "am")}
+              >
+                AM
+              </button>
+              <button
+                className={`time_button pm_button ${
+                  meridian.pMeri ? "am_pm_active" : null
+                }`}
+                onClick={(e): void => handleAmPm(e, "pm")}
+              >
+                PM
+              </button>
+            </div>
+            <div className="time_tabulation_container">
+              <div className="time_internal_tabulation_container">
+                <div className="time_data_tabulation">
+                  {timeArray.map((elem, index) => {
+                    return (
+                      <div
+                        className={`time_box ${
+                          !meridian.aMeri && index < 12 ? "time_box_am" : ""
+                        } ${
+                          !meridian.pMeri && index >= 12 ? "time_box_pm" : ""
+                        } time_box${index} ${
+                          index == activeIndex ? "time_box_active" : ""
+                        }`}
+                        key={index}
+                        onClick={() => {
+                          handleActiveClick(index);
+                          setDisplayPicker(false);
+                        }}
+                      >
+                        <p>
+                          {elem > 12 ? elem - 12 : elem}
+                          :00
+                        </p>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>
