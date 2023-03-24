@@ -19,7 +19,7 @@ const HomePage = () => {
     return state.screen.scrollWidth
   })
   return (
-    <>
+    <div className="overall_homepage_container">
       <div className="home_main_container">
         <div className="photo_holder_container">
           <Navigation />
@@ -48,10 +48,10 @@ const HomePage = () => {
       >
         <style>{`
                 ${
-                  scroll > 600
+                  scroll > 800
                     ? `
                     .homepage_filter_container{
-                      position:fixed;
+                      position:sticky;
                       top:0;
                       width:100%;
                       height:100px;
@@ -111,7 +111,7 @@ const HomePage = () => {
       <div className="ads_container"></div>
       <FAQ />
       <div className="ads_container"></div>
-    </>
+    </div>
   );
 };
 

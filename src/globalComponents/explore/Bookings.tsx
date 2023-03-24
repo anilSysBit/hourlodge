@@ -5,16 +5,23 @@ import { RootState } from "../../store";
 import Time from "../../features/Time";
 import MyDatePicker from "../../features/MyDatePicker";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-
+interface RoomData{
+  guests:number;
+  rooms:number;
+  children:number;
+  adults:number;
+  data:number;
+}
 const Bookings = () => {
   const [showBook, setShowBook] = useState(false);
   const [enableGuests, setEnableGuests] = useState(false);
   const [price, setPrice] = useState(500);
-  const [roomData, setRoomData] = useState({
+  const [roomData, setRoomData] = useState<RoomData>({
     guests: 2,
     rooms: 1,
     children: 0,
     adults: 2,
+    data:1,
   });
   const fetchPrice = {
     three: 500,
@@ -66,60 +73,29 @@ const Bookings = () => {
       setRoomData((prev)=>{
         return{
           ...prev,
-          rooms:num && prev.rooms > 0 ? prev.rooms +1 : prev.rooms < 0 ? prev.rooms - 1 :prev.rooms
+          rooms: num ? Math.min(prev.rooms+1,prev.adults) : Math.max(prev.rooms-1,Math.ceil(prev.adults/2)),
         }
       })
     }else if(iso == 1){
       setRoomData((prev)=>{
         return{
           ...prev,
-          adults:num && prev.adults <8 ? prev.adults +1 : prev.adults >1 ? prev.adults - 1 : prev.adults
+          adults:num ? Math.min(prev.adults +1,6) : Math.max(1,prev.adults - 1),
+          rooms:prev.adults
         }
       })
     } else if(iso == 2){
       setRoomData((prev)=>{
         return{
           ...prev,
-          children:num && prev.children < 4 ? prev.children +1 : prev.children >0?prev.children - 1:prev.children
+          children:num ? Math.min(5,prev.children +1) : Math.max(0,prev.children - 1)
         }
       })
     }
   }
+  
 
-  const makeRooms=(data:number)=>{
-    let count = 0;
-    for(let i = data; i >0; i-=2){
-      count++;
-    }
-    return count;
-  }
-  const makeRoomPerAdults =()=>{
-    if(roomData.adults < 2){
-      setRoomData((prev)=>{
-        return{
-          ...prev,
-          guests:1,
-          rooms:1
-        }
-      })
-    }else if(roomData.adults >2){
-      setRoomData((prev)=>{
-        return{
-          ...prev,
-          rooms: makeRooms(prev.adults % 2 == 0 ? roomData.adults :roomData.adults + 1),
-          guests:prev.adults
-        }
-      })
-    }else if(roomData.adults == 2){
-      setRoomData((prev)=>{
-        return{
-          ...prev,
-          guests:2,
-          rooms: prev.rooms > 2 ? 2 :prev.rooms
-        }
-      })
-    }
-  }
+
 
   useEffect(() => {
     if(scroll < 790){
@@ -127,8 +103,23 @@ const Bookings = () => {
     } else if(scroll > 790){
       setShowBook(true);
     }
-
-  makeRoomPerAdults();
+    if(roomData.adults<2){
+      setRoomData((prev)=>{
+        return{
+          ...prev,
+          guests:1,
+          rooms:1
+        }
+      })
+    }
+    if(roomData.rooms > roomData.adults){
+      setRoomData((prev)=>{
+        return{
+          ...prev,
+          rooms:prev.adults
+        }
+      })
+    }
   }, [scroll,roomData]);
   return (
     <>
@@ -200,7 +191,8 @@ const Bookings = () => {
                 >
                   <input
                     type="text"
-                    value={`${roomData.guests} Guest, ${roomData.rooms} room`}
+                    value={`${roomData.adults} Guest, ${roomData.rooms} room`}
+                    disabled
                   />
                   <button>
                     <KeyboardArrowDownIcon />

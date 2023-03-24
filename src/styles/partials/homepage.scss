@@ -4,8 +4,13 @@ $image-fade: rgb(7, 146, 173);
 $feature_color: #cad8db;
 $footer_color:rgb(3, 38, 45);
 $mobile_cover: rgb(220, 247, 249);
+
+.overall_homepage_container{
+    width: 100%;
+    position: relative;
+}
 .home_main_container {
-    height: 100vh;
+    height: 100%;
     width: 100%;
     background-image: linear-gradient(90deg,$image-fade,$image-fade,#c2ac8b,#c2ac8b);
     position: relative;
@@ -16,7 +21,7 @@ $mobile_cover: rgb(220, 247, 249);
 
         img {
             width: 100%;
-            height: 85vh;
+            height: 100vh;
             transform: scaleX(-1);
             // display: none;
         }
@@ -51,12 +56,12 @@ $mobile_cover: rgb(220, 247, 249);
         }
 
         .navigation_container {
-            width: 50%;
+            width: 100%;
             // border: 5px solid black;
             position: absolute;
             z-index: 1;
-            right: 50px;
             margin-top: 5px;
+            left: 0;
 
             ul {
                 list-style: none;
@@ -78,18 +83,17 @@ $mobile_cover: rgb(220, 247, 249);
     position: absolute;
     height: 120px;
     width: 60%;
-    max-width: 1920px;
     background-color: white;
-    // border: 5px solid black;
+    top: calc(620px);
     box-shadow: 2px 2px 20px rgb(201, 199, 199);
     border-radius: 15px;
-    bottom: 40px;
-    right: 50%;
-    transform: translateX(50%);
     display: flex;
     place-content: center;
     padding: 10px;
     z-index: 20;
+    // overflow: hidden;
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 .search_by_place_container {
     height: 200px;
@@ -234,6 +238,7 @@ $mobile_cover: rgb(220, 247, 249);
     height: 300px;
     width: 100%;
     position: relative;
+    overflow: hidden;
     // background-color: rgb(220, 247, 249);
     background-image: linear-gradient(90deg, transparent, $mobile_cover, transparent);
     display: flex;
@@ -335,6 +340,7 @@ $mobile_cover: rgb(220, 247, 249);
     margin-top: 20px;
     height: 400px;
     width:100%;
+    overflow: hidden;
     background-image: linear-gradient(90deg,transparent,$mobile_cover,transparent);
     display: flex;
     place-content: center;
