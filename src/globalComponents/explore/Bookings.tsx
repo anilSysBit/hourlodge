@@ -1,28 +1,38 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useRef } from "react";
 import { RoomService, SaveAs } from "@mui/icons-material";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
 import Time from "../../features/Time";
 import MyDatePicker from "../../features/MyDatePicker";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-interface RoomData{
-  guests:number;
-  rooms:number;
-  children:number;
-  adults:number;
-  data:number;
+
+
+interface RoomData {
+  guests: number;
+  rooms: number;
+  children: number;
+  adults: number;
+  data: number;
 }
+
+
 const Bookings = () => {
   const [showBook, setShowBook] = useState(false);
   const [enableGuests, setEnableGuests] = useState(false);
   const [price, setPrice] = useState(500);
+
+  // Data of Guests and Rooms
   const [roomData, setRoomData] = useState<RoomData>({
     guests: 2,
     rooms: 1,
     children: 0,
     adults: 2,
-    data:1,
+    data: 1,
   });
+  // Use ref for handling clicks
+  const guestEditRef = useRef<HTMLDivElement>(null);
+
+  // List of prices available this data will be obtained from server
   const fetchPrice = {
     three: 500,
     six: 900,
@@ -30,97 +40,142 @@ const Bookings = () => {
     t4: 2400,
   };
 
+
+
+
+  // Data of list of data to edit on guest and rooms details
   const guestMapData = [
     {
       title: "rooms",
       value: roomData.rooms,
-      iso:0,
+      iso: 0,
     },
     {
       title: "adults",
       value: roomData.adults,
-      iso:1,
-
+      iso: 1,
     },
     {
       title: "children",
       value: roomData.children,
-      iso:2
+      iso: 2,
     },
   ];
 
+
+
+
+  // calculating total price with total no of rooms
   const total_price = price * roomData.rooms;
+
+
+
+
+  // getting the scroll value from the store
   const scroll = useSelector((state: RootState) => {
     return state.screen.scrollWidth;
   });
+
+
+
+
+  // function that changes the display and position of  Booking Panel
   const handleBookingBox = () => {
     if (scroll < 790) {
       window.scrollTo({
         top: 800,
         behavior: "smooth",
       });
-    }else{
-      setShowBook(!showBook)
+    } else {
+      setShowBook(!showBook);
     }
   };
 
+
+
+
+  // This manages the active state of price box for which price stamp user selected
   const handlePriceButton = (price: number) => {
     setPrice(price);
   };
-
-  const  handleEditClick =(num:number,iso:number)=>{
-    if(iso == 0){
-      setRoomData((prev)=>{
-        return{
-          ...prev,
-          rooms: num ? Math.min(prev.rooms+1,prev.adults) : Math.max(prev.rooms-1,Math.ceil(prev.adults/2)),
-        }
-      })
-    }else if(iso == 1){
-      setRoomData((prev)=>{
-        return{
-          ...prev,
-          adults:num ? Math.min(prev.adults +1,6) : Math.max(1,prev.adults - 1),
-          rooms:prev.adults
-        }
-      })
-    } else if(iso == 2){
-      setRoomData((prev)=>{
-        return{
-          ...prev,
-          children:num ? Math.min(5,prev.children +1) : Math.max(0,prev.children - 1)
-        }
-      })
-    }
-  }
   
 
 
+// this function changes the data of guests and rooms dynamically
+  const handleEditClick = (num: number, iso: number) => {
+    if (iso == 0) {
+      setRoomData((prev) => {
+        return {
+          ...prev,
+          rooms: num
+            ? Math.min(prev.rooms + 1, prev.adults)
+            : Math.max(prev.rooms - 1, Math.ceil(prev.adults / 2)),
+        };
+      });
+    } else if (iso == 1) {
+      setRoomData((prev) => {
+        return {
+          ...prev,
+          adults: num
+            ? Math.min(prev.adults + 1, 6)
+            : Math.max(1, prev.adults - 1),
+          rooms: prev.adults,
+        };
+      });
+    } else if (iso == 2) {
+      setRoomData((prev) => {
+        return {
+          ...prev,
+          children: num
+            ? Math.min(5, prev.children + 1)
+            : Math.max(0, prev.children - 1),
+        };
+      });
+    }
+  };
 
+
+
+  // this function helps to release the active state of guest room detail edit panel and provide good UX
+  const handleClickOutside =(event:MouseEvent)=>{
+    if(guestEditRef.current && !guestEditRef.current.contains(event.target as Node)){
+      setEnableGuests(false);
+    }
+  }
   useEffect(() => {
-    if(scroll < 790){
+    // Manages the presence booking box upto limited pageWidthY
+    if (scroll < 790) {
       setShowBook(false);
-    } else if(scroll > 790){
+    } else if (scroll > 790) {
       setShowBook(true);
     }
-    if(roomData.adults<2){
-      setRoomData((prev)=>{
-        return{
+
+    // resets the guests and rooms data if user sets data less than 1
+    if (roomData.adults < 2) {
+      setRoomData((prev) => {
+        return {
           ...prev,
-          guests:1,
-          rooms:1
-        }
-      })
+          guests: 1,
+          rooms: 1,
+        };
+      });
     }
-    if(roomData.rooms > roomData.adults){
-      setRoomData((prev)=>{
-        return{
+    // manages the room details when no of rooms exceeded than no of persons
+    if (roomData.rooms > roomData.adults) {
+      setRoomData((prev) => {
+        return {
           ...prev,
-          rooms:prev.adults
-        }
-      })
+          rooms: prev.adults,
+        };
+      });
     }
-  }, [scroll,roomData]);
+
+    // Window mouse down event to reset unwanted opened dom
+    window.addEventListener("mousedown",handleClickOutside);
+    return()=>{
+      window.removeEventListener("mousedown",handleClickOutside);
+    }
+  }, [scroll, roomData,guestEditRef]);
   return (
     <>
       <div className="booking_box_container">
@@ -198,10 +253,10 @@ const Bookings = () => {
                     <KeyboardArrowDownIcon />
                   </button>
                 </div>
-                <div
-                  className={`guests_edit_box ${
+                <div className={`guests_edit_box ${
                     enableGuests ? "guest_edit_active" : ""
                   }`}
+                  ref={guestEditRef}
                 >
                   {guestMapData.map((elem, index) => {
                     return (
@@ -209,11 +264,15 @@ const Bookings = () => {
                         <div className="data_contents">
                           <p className="title">{elem.title}</p>
                           <span>
-                            <button onClick={()=>handleEditClick(1,elem.iso)}>
+                            <button
+                              onClick={() => handleEditClick(1, elem.iso)}
+                            >
                               +
                             </button>
                             <p className="value">{elem.value}</p>
-                            <button onClick={()=>handleEditClick(0,elem.iso)}>
+                            <button
+                              onClick={() => handleEditClick(0, elem.iso)}
+                            >
                               -
                             </button>
                           </span>
@@ -241,4 +300,3 @@ const Bookings = () => {
 };
 
 export default Bookings;
-

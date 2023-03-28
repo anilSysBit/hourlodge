@@ -56,6 +56,16 @@ const HomePage = () => {
                       width:100%;
                       height:100px;
                       border-radius:0;
+                      animation:scrollMate .5s linear 1;
+                  }
+
+                  @keyframes scrollMate{
+                    from{
+                      width:70%;
+                    }
+                    to{
+                      width:100%;
+                    }
                   }
                   .
                   .homepage_filter_container .filter_box_container{

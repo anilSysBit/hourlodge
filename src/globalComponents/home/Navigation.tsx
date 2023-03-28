@@ -9,7 +9,7 @@ const Navigation = () => {
         </Link>
         <li className="line_button cut_line">Accomodate your Hotel</li>
         <li className="line_button cut_line">Help & Support</li>
-        <li className="line_button">login / sign up</li>
+        <Link to='/loginsignup'><li className="line_button">login / sign up</li></Link>
       </ul>
     </div>
   );
