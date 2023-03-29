@@ -54,28 +54,6 @@ $mobile_cover: rgb(220, 247, 249);
                 font-size: 20px;
             }
         }
-
-        .navigation_container {
-            width: 100%;
-            // border: 5px solid black;
-            position: absolute;
-            z-index: 1;
-            margin-top: 5px;
-            left: 0;
-
-            ul {
-                list-style: none;
-                display: flex;
-                padding: 4px;
-                float: right;
-
-                li {
-                    color: white;
-                    margin-left: 20px;
-                    font-size: 20px;
-                }
-            }
-        }
     }
 }
 

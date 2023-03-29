@@ -1,3 +1,9 @@
+.login_signup_container{
+    .navigation_container{
+        margin-top: 30px;
+    }
+}
+
 .login_main_container{
     height: 150vh;
     width: 100%;
@@ -35,11 +41,12 @@
             // border: 2px solid black;
             height: 70%;
             width: 60%;
+            margin-top: 40px;
             background-color: white;
             border-radius: 10px;
             max-width: 500px;
             margin-right: 40px;
-            // box-shadow: 2px 2px 15px rgb(58, 57, 57);
+            box-shadow: 2px 2px 15px rgb(58, 57, 57);
            .thumbnail_container{
             margin-top: 20px;
                 h1{

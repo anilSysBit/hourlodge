@@ -1,0 +1,501 @@
+.explore_main_container {
+  position: relative;
+  width: 100%;
+}
+.explore_main_container .explore_navigation_container {
+  display: flex;
+  place-content: center;
+  background-image: linear-gradient(90deg, rgb(7, 146, 173), white);
+  position: sticky;
+  top: 0;
+  height: 100px;
+  place-items: center;
+  z-index: 10;
+}
+.explore_main_container .explore_navigation_container .filter_box_container {
+  border-radius: 10px;
+  padding: -2px;
+  width: 50%;
+  font-size: 15px;
+}
+.explore_main_container .explore_navigation_container .filter_box_container .filter_select h3 {
+  font-size: 15px;
+}
+.explore_main_container .explore_filter_container {
+  width: 25%;
+  height: 100vh;
+  float: right;
+  position: sticky;
+  top: 100px;
+}
+.explore_main_container .explore_body_container {
+  width: 75%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.explore_hotel_container {
+  width: 100%;
+  margin-top: 20px;
+}
+.explore_hotel_container .database_hotels_list {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  place-content: center;
+  row-gap: 30px;
+  overflow: hidden;
+}
+.explore_hotel_container .database_hotels_list .hotel_view {
+  height: 450px;
+  width: 90%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 2px 2px 15px rgb(184, 184, 184);
+  transition: 0.2s ease;
+  overflow: hidden;
+}
+.explore_hotel_container .database_hotels_list .hotel_view:hover {
+  outline: 4px solid rgb(7, 146, 173);
+}
+.explore_hotel_container .database_hotels_list .hotel_view .img_box {
+  width: 40%;
+  cursor: pointer;
+  overflow: hidden;
+}
+.explore_hotel_container .database_hotels_list .hotel_view .img_box img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+.explore_hotel_container .database_hotels_list .hotel_view .content_box {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+.explore_hotel_container .database_hotels_list .hotel_view .content_box .description_box {
+  position: relative;
+  width: 100%;
+  height: 85%;
+}
+.explore_hotel_container .database_hotels_list .hotel_view .content_box .description_box .hotel_title {
+  width: 100%;
+  padding: 10px;
+}
+.explore_hotel_container .database_hotels_list .hotel_view .content_box .description_box .hotel_title h2 {
+  cursor: pointer;
+}
+.explore_hotel_container .database_hotels_list .hotel_view .content_box .description_box .hotel_title h2 span {
+  position: absolute;
+  font-size: 15px;
+  padding: 10px;
+  display: flex;
+  place-items: center;
+  place-content: center;
+  background-image: linear-gradient(90deg, purple, rgb(7, 146, 173));
+  color: white;
+  top: 0;
+  right: 0;
+  width: 300px;
+  transform: translateX(130px) translateY(0px) rotateZ(39deg);
+  border-radius: 15px;
+  transition: 0.3s ease;
+}
+.explore_hotel_container .database_hotels_list .hotel_view .content_box .description_box .hotel_title h2:hover {
+  text-decoration: underline;
+}
+.explore_hotel_container .database_hotels_list .hotel_view .content_box .description_box .rating_box {
+  padding: 10px;
+}
+.explore_hotel_container .database_hotels_list .hotel_view .content_box .description_box .location_box {
+  padding: 10px;
+}
+.explore_hotel_container .database_hotels_list .hotel_view .content_box .description_box .location_box p {
+  display: flex;
+  place-items: center;
+}
+.explore_hotel_container .database_hotels_list .hotel_view .content_box .description_box .allowence_feature {
+  padding: 10px;
+}
+.explore_hotel_container .database_hotels_list .hotel_view .content_box .description_box .allowence_feature ul {
+  list-style: none;
+  display: flex;
+}
+.explore_hotel_container .database_hotels_list .hotel_view .content_box .description_box .allowence_feature ul li {
+  display: flex;
+  justify-content: space-between;
+  place-items: center;
+  margin: 5px;
+}
+.explore_hotel_container .database_hotels_list .hotel_view .content_box .description_box .room_service {
+  padding: 10px;
+}
+.explore_hotel_container .database_hotels_list .hotel_view .content_box .description_box .room_service ul {
+  list-style: none;
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+.explore_hotel_container .database_hotels_list .hotel_view .content_box .description_box .room_service ul li {
+  text-decoration: none;
+}
+.explore_hotel_container .database_hotels_list .hotel_view .content_box .discount_liner {
+  width: 100%;
+  background-image: linear-gradient(90deg, rgb(213, 239, 249), rgb(188, 248, 252));
+  height: 40px;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.explore_hotel_container .database_hotels_list .hotel_view .content_box .discount_liner p {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.explore_hotel_container .database_hotels_list .hotel_view .content_box .pricing_box {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  justify-content: space-between;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+
+.book_hotel_container {
+  width: 100%;
+}
+.book_hotel_container .explore_navigation_container {
+  position: relative;
+}
+.book_hotel_container .book_hotel_internal_container {
+  width: 100%;
+}
+.book_hotel_container .book_hotel_internal_container .hotel_profile_main {
+  background-size: contain;
+  background-position: right;
+  background-attachment: fixed;
+}
+.book_hotel_container .book_hotel_internal_container .hotel_profile_main:hover {
+  filter: grayscale(0);
+}
+.book_hotel_container .book_hotel_internal_container .hotel_profile_main .hotel_title_manager {
+  color: white;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(90deg, rgb(23, 23, 23), rgba(199, 199, 199, 0), transparent);
+  padding: 10px;
+  display: flex;
+  place-items: center;
+}
+.book_hotel_container .book_hotel_internal_container .hotel_profile_main .hotel_title_manager .content_manager .header_container h1 {
+  font-size: 50px;
+}
+.book_hotel_container .book_hotel_internal_container .hotel_profile_main .hotel_title_manager .content_manager .city h2 {
+  font-size: 25px;
+}
+.book_hotel_container .book_hotel_internal_container .hotel_profile_main .hotel_title_manager .content_manager .city h3 {
+  font-size: 20px;
+  display: flex;
+  place-items: center;
+  margin-top: 20px;
+}
+.book_hotel_container .book_hotel_internal_container .hotel_profile_main .hotel_title_manager .content_manager .rating_box {
+  margin-bottom: 10px;
+}
+.book_hotel_container .book_hotel_internal_container .image_box {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  gap: 10px;
+  background-image: linear-gradient(90deg, rgb(219, 219, 219), transparent, rgb(217, 217, 217));
+}
+.book_hotel_container .book_hotel_internal_container .image_box img {
+  height: 150px;
+  width: 200px;
+  max-width: 700px;
+  border-radius: 15px;
+}
+.book_hotel_container .book_hotel_internal_container .acceptance_box {
+  padding: 10px;
+  margin-top: 10px;
+  width: 100%;
+  background-image: linear-gradient(90deg, rgb(207, 207, 207), transparent);
+}
+.book_hotel_container .book_hotel_internal_container .acceptance_box .acceptance_internal {
+  padding: 30px;
+}
+.book_hotel_container .book_hotel_internal_container .acceptance_box .acceptance_internal h3 {
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+}
+.book_hotel_container .book_hotel_internal_container .features_box {
+  margin-top: 80px;
+}
+.book_hotel_container .book_hotel_internal_container .features_box h2 {
+  font-size: 30px;
+  margin-left: 60px;
+}
+.book_hotel_container .book_hotel_internal_container .features_box ul {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  place-items: center;
+  width: 70%;
+}
+.book_hotel_container .book_hotel_internal_container .features_box ul li {
+  height: 100px;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  place-items: center;
+}
+.book_hotel_container .book_hotel_internal_container .hotel_state_description {
+  margin-top: 40px;
+}
+.book_hotel_container .book_hotel_internal_container .hotel_state_description .hotel_policy {
+  padding: 10px;
+  width: 60%;
+}
+.book_hotel_container .book_hotel_internal_container .hotel_state_description .hotel_policy ul {
+  padding: 10px;
+  list-style: circle;
+}
+.book_hotel_container .book_hotel_internal_container .hotel_state_description .hotel_policy ul li {
+  margin: 10px;
+}
+.book_hotel_container .book_hotel_internal_container .google_map_directions {
+  width: 60%;
+  height: 300px;
+  padding: 20px;
+}
+.book_hotel_container .book_hotel_internal_container .google_map_directions iframe {
+  border: none;
+}
+.book_hotel_container .book_hotel_internal_container .google_map_directions iframe .navigate {
+  position: absolute;
+  background-color: black;
+}
+
+.booking_box_container {
+  position: fixed;
+  height: 100px;
+  width: 200px;
+  bottom: 50px;
+  right: 5px;
+}
+.booking_box_container .box_active {
+  display: block;
+}
+
+.booking_all_container {
+  position: absolute;
+  height: 75vh;
+  width: 400px;
+  bottom: calc(100% + 20px);
+  right: 0px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 2px 2px 15px rgb(169, 169, 169);
+  display: none;
+}
+.booking_all_container .booking_internal_container .booking_header h2 {
+  text-align: center;
+  background-image: linear-gradient(90deg, purple, rgb(7, 146, 173));
+  border-radius: 10px 10px 0px 0px;
+  color: white;
+  padding: 5px;
+}
+.booking_all_container .booking_internal_container .booking_header p {
+  text-align: center;
+}
+.booking_all_container .booking_internal_container .booking_datetime_picker {
+  position: relative;
+  display: flex;
+  box-shadow: 0px 0px 5px gray;
+  border-radius: 10px;
+  justify-content: space-around;
+  padding: 5px;
+}
+.booking_all_container .booking_internal_container .booking_datetime_picker .date_content {
+  width: 100%;
+  position: relative;
+  display: flex;
+  place-content: center;
+  place-items: center;
+}
+.booking_all_container .booking_internal_container .booking_datetime_picker .date_content .ourstay_calendar {
+  margin-top: 50px;
+}
+.booking_all_container .booking_internal_container .booking_datetime_picker .date_content .time_select {
+  position: absolute;
+}
+.booking_all_container .booking_internal_container .booking_datetime_picker .date_content .time_select .time_container {
+  margin-right: 80px;
+}
+.booking_all_container .booking_internal_container .price_picker {
+  background-color: rgb(243, 251, 255);
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  place-items: center;
+  width: 80%;
+  padding: 10px;
+  margin: 0 auto;
+}
+.booking_all_container .booking_internal_container .price_picker button {
+  width: 100%;
+  text-align: left;
+  border-radius: 10px;
+  height: 40px;
+  font-size: 18px;
+  padding: 10px;
+  margin: 2px;
+  font-weight: 100;
+  cursor: pointer;
+}
+.booking_all_container .booking_internal_container .price_picker button span {
+  float: right;
+}
+.booking_all_container .booking_internal_container .price_picker button:hover {
+  box-shadow: 2px 2px 10px gray;
+  background-color: rgb(3, 56, 82);
+  color: white;
+}
+.booking_all_container .booking_internal_container .price_picker .price_active {
+  box-shadow: 2px 2px 10px gray;
+  background-color: rgb(7, 146, 173);
+  color: white;
+}
+.booking_all_container .booking_internal_container .guests_rooms_data {
+  position: relative;
+}
+.booking_all_container .booking_internal_container .guests_rooms_data p {
+  text-align: center;
+}
+.booking_all_container .booking_internal_container .guests_rooms_data .data_view_guests {
+  border: 2px solid black;
+  width: 80%;
+  height: 50px;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+.booking_all_container .booking_internal_container .guests_rooms_data .data_view_guests input {
+  border: none;
+  height: 100%;
+  width: 90%;
+  font-size: 18px;
+  background-color: transparent;
+}
+.booking_all_container .booking_internal_container .guests_rooms_data .data_view_guests input:focus {
+  outline: none;
+}
+.booking_all_container .booking_internal_container .guests_rooms_data .data_view_guests button {
+  background-color: transparent;
+  font-size: 18px;
+}
+.booking_all_container .booking_internal_container .guests_rooms_data .guests_edit_box {
+  height: 130px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px gray;
+  background-color: white;
+  position: absolute;
+  z-index: 10;
+  display: none;
+}
+.booking_all_container .booking_internal_container .guests_rooms_data .guests_edit_box .guests_d {
+  padding: 5px;
+}
+.booking_all_container .booking_internal_container .guests_rooms_data .guests_edit_box .guests_d .data_contents {
+  display: flex;
+  justify-content: space-between;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  place-items: center;
+  width: 100%;
+}
+.booking_all_container .booking_internal_container .guests_rooms_data .guests_edit_box .guests_d .data_contents .title {
+  font-size: 20px;
+}
+.booking_all_container .booking_internal_container .guests_rooms_data .guests_edit_box .guests_d .data_contents span {
+  display: flex;
+  place-items: center;
+  width: 50%;
+  justify-content: space-between;
+}
+.booking_all_container .booking_internal_container .guests_rooms_data .guests_edit_box .guests_d .data_contents span .value {
+  font-size: 20px;
+}
+.booking_all_container .booking_internal_container .guests_rooms_data .guests_edit_box .guests_d .data_contents span button {
+  background-color: rgb(7, 146, 173);
+  color: white;
+  border-radius: 10px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.booking_all_container .booking_internal_container .guests_rooms_data .guests_edit_box .guests_d .data_contents span button:hover {
+  background-color: rgb(3, 56, 82);
+}
+.booking_all_container .booking_internal_container .guests_rooms_data .guest_edit_active {
+  display: block;
+  z-index: 100;
+}
+.booking_all_container .booking_internal_container .total_price_reserve {
+  display: flex;
+  place-items: center;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  justify-content: space-around;
+}
+.booking_all_container .booking_internal_container .total_price_reserve h2 {
+  font-size: 20px;
+}
+.booking_all_container .booking_internal_container .total_price_reserve button {
+  background-color: none;
+  background-image: linear-gradient(90deg, purple, rgb(7, 146, 173));
+  width: 150px;
+  height: 50px;
+}
+
+.bookbox {
+  position: fixed;
+  bottom: 50px;
+  right: 80px;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: rgb(7, 146, 173);
+  color: white;
+  font-size: 30px;
+  z-index: 20;
+  box-shadow: 2px 2px 15px black;
+  cursor: pointer;
+  transition: 0.5s ease;
+  animation: animate 0.5s ease-in 1;
+}
+@keyframes animate {
+  from {
+    transform: translateX(200px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.bookbox:hover {
+  background-color: rgb(3, 56, 82);
+}/*# sourceMappingURL=explore.css.map */

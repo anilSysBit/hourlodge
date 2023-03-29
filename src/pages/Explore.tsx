@@ -2,7 +2,7 @@ import React from "react";
 import SmartFilter from "../features/SmartFilter";
 import Hotels from "../globalComponents/explore/Hotels";
 import FilterForm from "../globalComponents/home/FilterForm";
-import "../styles/main.css";
+import '../styles/partials/explore.css'
 
 const Explore = () => {
   return (

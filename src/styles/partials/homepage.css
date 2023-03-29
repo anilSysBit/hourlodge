@@ -43,24 +43,6 @@
   color: white;
   font-size: 20px;
 }
-.home_main_container .photo_holder_container .navigation_container {
-  width: 100%;
-  position: absolute;
-  z-index: 1;
-  margin-top: 5px;
-  left: 0;
-}
-.home_main_container .photo_holder_container .navigation_container ul {
-  list-style: none;
-  display: flex;
-  padding: 4px;
-  float: right;
-}
-.home_main_container .photo_holder_container .navigation_container ul li {
-  color: white;
-  margin-left: 20px;
-  font-size: 20px;
-}
 
 .homepage_filter_container {
   position: absolute;
