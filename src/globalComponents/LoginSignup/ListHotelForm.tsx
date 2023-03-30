@@ -95,10 +95,10 @@ const ListHotelForm = () => {
             <h1>How to share Google Map Location Address??</h1>
             <div className="answer_preview">
               <ul>
-                <li><h3>Step 1 : Go to Google Maps <a onClick={()=>window.open("https://google.com/maps")}>Click Here</a></h3></li>
-                <li><h3>Step 2 : Search Your Hotel On Maps</h3></li>
-                <li><h3>Step 3 : Click On Share of Your Hotel</h3></li>
-                <li><h3>Step 4 : Click on Copy to Clickboard</h3></li>
+                <li><h3>Step 1 : Open Google Maps <a onClick={()=>window.open("https://google.com/maps")}>Click Here</a></h3></li>
+                <li><h3>Step 2 : Search for Your Hotel's Location</h3></li>
+                <li><h3>Step 3 :  click on the "Share" button located in the bottom right corner of the screen</h3></li>
+                <li><h3>Step 4 : Select the "Copy Link" option from the pop-up.</h3></li>
                 <li><h3>Step 5 : Paste on field of the form</h3></li>
               </ul>
               <div className="img_container">

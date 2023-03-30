@@ -145,6 +145,7 @@
 }
 .list_hotel_container .how_to_send_location .answer_preview ul {
   padding: 10px;
+  max-width: 400px;
 }
 .list_hotel_container .how_to_send_location .answer_preview ul li {
   margin: 20px;

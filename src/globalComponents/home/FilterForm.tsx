@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import "react-date-picker/dist/DatePicker.css";
 import "react-calendar/dist/Calendar.css";
 import Time from "../../features/Time";
@@ -12,6 +12,7 @@ interface Props {
 }
 
 const FilterForm = () => {
+  const navigate= useNavigate();
   return (
     <form
       className="filter_box_container"
@@ -21,7 +22,7 @@ const FilterForm = () => {
         <img src={fakeLogo} alt="" />
       </div>
       <div className="filter_select">
-        <h2 className="filter_login_signup">Login/ Signup</h2>
+        <h2 onClick={()=>navigate('/loginsignup')} className="filter_login_signup">Login/ Signup</h2>
       </div>
       <div className="filter_select">
         <h3>City</h3>
