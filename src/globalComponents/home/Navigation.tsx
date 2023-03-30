@@ -11,7 +11,7 @@ const Navigation = () => {
         <Link to="/explore">
           <li className="line_button cut_line">explore</li>
         </Link>
-        <li className="line_button cut_line">Accomodate your Hotel</li>
+        <Link to='/list-my-hotel'><li className="line_button cut_line">Accomodate your Hotel</li></Link>
         <li className="line_button cut_line">Help & Support</li>
         <Link to='/loginsignup'><li className="line_button">login / sign up</li></Link>
       </ul>

@@ -13,6 +13,7 @@ import { Login } from "@mui/icons-material";
 import Signup from "./globalComponents/LoginSignup/Signup";
 import BookHotelPage from "./globalComponents/explore/BookHotelPage";
 import LoginSignup from "./pages/LoginSignup";
+import ListHotelForm from "./globalComponents/LoginSignup/ListHotelForm";
 
 const ScrollToTop =()=>{
   const {pathname} = useLocation();
@@ -54,6 +55,7 @@ const App=()=> {
           <Route path="/loginsignup" element={<LoginSignup/>}/>
           <Route path="signup" element={<Signup/>} />
           <Route path="/booking/:id" element={<BookHotelPage/>} />
+          <Route path="/list-my-hotel" element={<ListHotelForm/>} />
         </Routes>        
         <Footer />
       </BrowserRouter>
