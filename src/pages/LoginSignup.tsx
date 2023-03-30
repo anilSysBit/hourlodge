@@ -11,6 +11,10 @@ const LoginSignup = () => {
         <Navigation/>
       </div>
         <Login/>
+        <div className="hoteiler_login_box">
+        <h1>Are you a Hoteiler??</h1>
+        <button className="global_button">Login As hoteiler</button>
+      </div>
     </div>
   )
 }
