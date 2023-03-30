@@ -14,7 +14,7 @@ const ListHotelForm = () => {
             phone: "",
           },
           onSubmit: (values) => {
-            setNumber(values.phone)
+            console.log(values)
           },
         });
         const message = 'Hello,Welcome to OurStay Customer Care.';
