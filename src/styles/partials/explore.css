@@ -369,11 +369,6 @@
 .booking_all_container .booking_internal_container .price_picker button span {
   float: right;
 }
-.booking_all_container .booking_internal_container .price_picker button:hover {
-  box-shadow: 2px 2px 10px gray;
-  background-color: rgb(3, 56, 82);
-  color: white;
-}
 .booking_all_container .booking_internal_container .price_picker .price_active {
   box-shadow: 2px 2px 10px gray;
   background-color: rgb(7, 146, 173);
@@ -550,10 +545,6 @@
   transition: 0.3s ease;
   margin-top: 2px;
 }
-.smart_filter_container .smart_body_container .location_filter .data h3:hover {
-  background-color: rgb(3, 56, 82);
-  color: white;
-}
 .smart_filter_container .smart_body_container .location_filter .data .active_location {
   background-color: var(--global);
   box-shadow: 2px 2px 10px rgb(189, 189, 189);
@@ -570,6 +561,28 @@
 .smart_filter_container .smart_body_container .location_filter ::-webkit-scrollbar-thumb {
   background-color: var(--global);
   border-radius: 5px;
+}
+.smart_filter_container .smart_body_container .hrs_filter {
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+}
+.smart_filter_container .smart_body_container .hrs_filter .button_container {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+.smart_filter_container .smart_body_container .hrs_filter .button_container .filter_hr_button {
+  height: 30px;
+  width: 80px;
+  margin: 2px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px gray;
+  cursor: pointer;
+}
+.smart_filter_container .smart_body_container .hrs_filter .but_active {
+  background-color: rgb(7, 146, 173);
+  color: white;
 }
 .smart_filter_container .smart_body_container .price_filter {
   margin-top: 20px;

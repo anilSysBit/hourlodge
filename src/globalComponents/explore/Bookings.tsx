@@ -207,14 +207,14 @@ const Bookings = () => {
               </div>
               <div className="price_picker">
                 <p>Select Your Price</p>
-                <button
+                {/* <button
                   onClick={() => handlePriceButton(fetchPrice.three)}
                   className={`${
                     price == fetchPrice.three ? "price_active" : ""
                   }`}
                 >
                   Rs.{fetchPrice.three} <span>3hr</span>
-                </button>
+                </button> */}
                 <button
                   onClick={() => handlePriceButton(fetchPrice.six)}
                   className={`${price == fetchPrice.six ? "price_active" : ""}`}

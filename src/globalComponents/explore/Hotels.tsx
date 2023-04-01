@@ -6,6 +6,12 @@ import { Link,useNavigate } from "react-router-dom";
 
 const Hotels = () => {
   const navigate = useNavigate();
+
+  const hrs = {
+    one:6,
+    two:12,
+    three:24,
+  }
   return (
     <div className="explore_hotel_container">
       <div className="database_hotels_list">
@@ -38,15 +44,15 @@ const Hotels = () => {
                 <div className="pricing_box">
                   <button className="price_button">
                     Rs.{elem + 500} <br />
-                    <span>3hrs</span>
+                    <span>{hrs.one}hrs</span>
                   </button>
                   <button className="price_button">
                     Rs.{elem + 600} <br />
-                    <span>6hrs</span>
+                    <span>{hrs.two}hrs</span>
                   </button>
                   <button className="price_button">
                     Rs.{elem + 1000} <br />
-                    <span>12hrs</span>
+                    <span>{hrs.three}hrs</span>
                   </button>
                 </div>
               </div>
